@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context path="/WebApplication4">
+<Context path="/">
          <ResourceLink name="jdbc/AntenaCPS"
                 global="jdbc/AntenaCPS"
                 auth="Container"

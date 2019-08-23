@@ -7,6 +7,8 @@ package br.gov.sp.cps.antena.pool;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.servlet.ServletException;
@@ -33,8 +35,13 @@ public class Connection extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+           Context ctx = null;
+            Statement stmt = null;
+            ResultSet rs = null;
+            
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+         
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -47,9 +54,27 @@ public class Connection extends HttpServlet {
             Context envContext  = (Context)initContext.lookup("java:/comp/env");
             DataSource ds = (DataSource)envContext.lookup("jdbc/AntenaCPS");
             java.sql.Connection conn = ds.getConnection();
+            out.println("<H3>"+"Conectou!"+"</H3>");
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery("select id_geral, nome from parceiros order by id_geral");
+            response.setContentType("text/html");
+            out.print("<html><body><h2>Detalhes parceiro</h2>");
+            out.print("<table border=\"1\" cellspacing=10 cellpadding=5>");
+            out.print("<th>Parceiro - ID</th>");
+            out.print("<th>Parcerio - Nome</th>");
+            
+            while(rs.next())
+            {
+                out.print("<tr>");
+                out.print("<td>" + rs.getInt("id_geral") + "</td>");
+                out.print("<td>" + rs.getString("nome") + "</td>");
+                out.print("</tr>");
+            }
+            out.print("</table></body><br/>");
             } catch ( Exception e){
             out.println("<h2>"+e.getMessage()+"</h2>");
             }
+                  
             out.println("</body>");
             out.println("</html>");
         }
