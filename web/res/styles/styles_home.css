@@ -1,0 +1,328 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 29/07/2019, 15:35:00
+    Author     : julio.pereira
+*/
+
+.fundo {
+    background-image: url('../images/fundo.jpg');
+    background-size: cover;
+    height: 450px;
+    margin-top: 2%;
+}
+
+#home {
+    color: white; 
+    display: inline; 
+    font-size: 25px;
+    margin-left: 40%;
+}
+
+.Entrar {
+    margin-top: 17%;
+    margin-left: 42%;
+}
+
+#openModal{
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+
+h1 {
+    padding: 5px 5px 0% 0%;
+}
+
+#capt {
+    color: white; 
+    display: inline;
+    margin: 11%;
+}
+
+#propg{
+    color: white; 
+    display: inline;
+    margin-left: 14%;
+}
+
+#anten {
+    margin-left: 5px;
+    color: red; 
+    display: inline
+}
+
+#background {
+    padding: 10px;
+    border: 2px black;
+    margin-left: -1rem;
+    background-size: cover;
+    background-image: url('../images/background.png');
+}
+
+#background-cadastro{
+    padding: 10px;
+    border: 2px black;
+    background-size: cover;
+    background-image: url('../images/background.png');
+}
+
+#brasao{
+    max-width: 220px ;
+    width: 100% ;
+    height: auto; 
+    position: relative;
+    left: 68rem;
+}
+
+#logocps{
+    max-width: 50%;
+    margin-left: 20%;
+}
+
+#logogov{
+    max-width: 15rem;
+    margin-left: 15%;
+}
+
+#release{
+    text-align: center;
+}
+
+a #release{
+    color: inherit;
+}
+
+input[type=submit] {
+    width: 45%;
+    background-color: red;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius:0px;
+    cursor: pointer;
+}
+  
+input[type=submit]:hover {
+    background-color: red;
+}
+
+.camposform {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid red;
+    border-radius: 0px;
+    box-sizing: border-box;
+}
+
+#center {
+    text-align: center;
+}
+
+#fbcolor {
+    border-radius: 50%;
+}
+
+ #ggcolor {
+    background-color: red;
+    color:white;
+    border-radius: 52%;
+    margin-left: 5px;
+}
+  
+.modal-content {
+    -webkit-border-radius: 30px!important;
+    -moz-border-radius: 30px!important;
+    border-radius: 30px!important; 
+}
+
+#username {
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    width: 85%;
+    margin-left: 5%
+}
+
+#password {
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    width: 85%;
+    margin-left: 5%;
+}
+
+#labelEmail {
+    margin-left: 8%;
+    font-size: 15px;
+}
+
+#labelSenha {
+    margin-left: 8%;
+    font-size: 15px;  
+}
+
+#btnEntrar {
+    width: 140px;
+    margin-top: 5%;
+    margin-left: -39%;
+    font-size: 15px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+}
+
+.register {
+    border-radius: 30px;
+    background-color: white;
+    padding: 2% 15% 2% 15%;
+    margin: 11% 7%;
+}
+
+.icons-register {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 70%;
+    margin-top: -4%;
+}
+ 
+#palavras {
+  margin-left: 52%;
+  margin-top: -68px;
+}
+
+#icon1 {
+    padding: 0.5%;
+}
+
+#icon2 {
+  margin-left: 96%;
+  width: 1px;
+  height: 1px;
+}
+
+#return {
+  margin-right: 700px;
+  font-size: 3px;
+}
+
+#ouAcesse {
+    margin-left: 70%;
+}
+
+#iconF {
+    margin-left: 70%;
+    width: 1px;
+    height: 1px;
+    margin-top: -45px;
+}
+
+#iconL {
+    margin-left: 84%;
+    width: 1px;
+    height: 1px;
+    margin-top: -1px
+}
+
+#iconG {
+    margin-left: 77%;
+    width: 1px;
+    height: 1px;
+    margin-top: -1px;
+}
+
+#primeiroAcesso {
+    margin-left: 25%;
+    margin-top: 5%
+}
+
+#iconC {
+    margin-left: 91%;
+    width: 1px;
+    height: 1px;
+}
+
+#googleImage:hover {
+    cursor: pointer;
+}
+
+#facebookImage:hover {
+    cursor: pointer;
+}
+
+#linkedinImage:hover {
+    cursor: pointer;
+}
+
+/* 	Footer            */
+
+/* Main Footer */
+footer .main-footer{	padding: 20px 0;	background: #000033;}
+footer ul{	padding-left: 0;	list-style: none;}
+
+/* Copy Right Footer */
+.footer-copyright {	background: #00004d;	padding: 5px 0;}
+.footer-copyright .logo {    display: inherit;}
+.footer-copyright nav {    float: right;    margin-top: 5px;}
+.footer-copyright nav ul {	list-style: none;	margin: 0;	padding: 0;}
+.footer-copyright nav ul li {	border-left: 1px solid #505050;	display: inline-block;	line-height: 12px;	margin: 0;	padding: 0 8px;}
+.footer-copyright nav ul li a{	color: #969696;}
+.footer-copyright nav ul li:first-child {	border: medium none;	padding-left: 0;}
+.footer-copyright p {	color: #969696;	margin: 2px 0 0;}
+
+/* Footer Top */
+.footer-top{	background: #252525;	padding-bottom: 30px;	margin-bottom: 30px;	border-bottom: 3px solid #222;}
+
+/* Footer transparent */
+footer.transparent .footer-top, footer.transparent .main-footer{	background: transparent;}
+footer.transparent .footer-copyright{	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.3) ;}
+
+/* Footer light */
+footer.light .footer-top{	background: #f9f9f9;}
+footer.light .main-footer{	background: #f9f9f9;}
+footer.light .footer-copyright{	background: none repeat scroll 0 0 rgba(255, 255, 255, 0.3) ;}
+
+/* Footer 4 */
+.footer- .logo {    display: inline-block;}
+
+/*==================== 
+	Widgets 
+====================== */
+.widget{	padding: 20px;	margin-bottom: 40px;}
+.widget.widget-last{	margin-bottom: 0px;}
+.widget.no-box{	padding: 0;	background-color: transparent;	margin-bottom: 40px;
+	box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none; -ms-box-shadow: none; -o-box-shadow: none;}
+.widget.subscribe p{	margin-bottom: 18px;}
+.widget li a{	color: #ffffff;} /*Cor dos links */
+.widget li a:hover{	color: #ff0000;}
+.widget-title {margin-bottom: 20px;}
+.widget-title span {background: #ff0000 none repeat scroll 0 0;display: block; height: 1px;margin-top: 25px;position: relative;width: 20%;}
+.widget-title span::after {background: inherit;content: "";height: inherit;    position: absolute;top: -4px;width: 50%;}
+.widget-title.text-center span,.widget-title.text-center span::after {margin-left: auto;margin-right:auto;left: 0;right: 0;}
+.widget .badge{	float: right;	background: #7f7f7f;}
+
+.typo-light h1, 
+.typo-light h2, 
+.typo-light h3, 
+.typo-light h4, 
+.typo-light h5, 
+.typo-light h6,
+.typo-light p,
+.typo-light div,
+.typo-light span,
+.typo-light small{	color: #fff;} /* Cor das letras*/
+
+ul.social-footer2 {	margin: 0;padding: 0;	width: auto;}
+ul.social-footer2 li {display: inline-block;padding: 0;}
+ul.social-footer2 li a:hover {background-color:#ff0000;}
+ul.social-footer2 li a {display: block;	height:30px;width: 30px;text-align: center;}
+
+#marker{
+    max-width: 10%;
+}

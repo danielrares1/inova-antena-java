@@ -1,0 +1,33 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+
+<div class="row" id="portfolio">
+    <div id="port" class="row" style="margin-top:25px;">
+        <h4 style="color: #72A5FF;"><b>Meu Portfólio</b></h4>
+    </div>
+</div>
+<div class="row" id="border">
+    <div class="container">
+        <div class="row blog">
+            <div class="col-md-12">
+                <div id="blogCarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row" style="margin-left: -15px; margin-right: 0px;">
+                                <div class="col">
+                                    <a target="_blank">
+                                    <img class="portfolio-item" src="<%= request.getContextPath()%>/res/images/profile/imgTeste.jpg" alt="Image" style="max-width:100%;">
+                                    <div class="text-portfolio">Nome do Projeto</div>
+                                    </a>
+                                </div>
+                                <div class="col"></div>
+                                <button type="button" class="btn-blue" data-toggle="modal" data-target="#modalProject"
+                                  style="max-height:100%!important;max-width:200px;margin: 0px 15px 0px 0px;">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

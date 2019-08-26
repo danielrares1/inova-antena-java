@@ -1,0 +1,32 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+
+
+<div class="row" id="ultimasnoticias">
+  <div id="port" class="row" style="margin-top:25px;">
+    <h4 style="color: #72A5FF;"><b>Últimas Noticías</b></h4>
+  </div>
+</div>
+<div class="container" style="padding-bottom: 80px;">
+  <div class="row">
+    <div class="col-md-6">
+      <img src="https://www.nih.no/globalassets/artikkel-toppbilde-1600x900/arbeidslivsdagen_1600.jpg" class="card1"
+        alt="..." style="height: 350px; width: 100%; margin-left: -15px;" />
+    </div>
+    <div class="col-md-6">
+      <img src="https://www.nih.no/globalassets/artikkel-toppbilde-1600x900/arbeidslivsdagen_1600.jpg" class="card2"
+        alt="..." style="height: 350px; width: 100%;" />
+    </div>
+  </div>
+  <br />
+  <div class="row" style="margin-top: 25px;">
+    <div class="col-md-6">
+      <img src="https://www.nih.no/globalassets/artikkel-toppbilde-1600x900/arbeidslivsdagen_1600.jpg" class="card3"
+        alt="..." style="height: 350px; width: 100%; margin-left: -15px;" />
+    </div>
+    <div class="col-md-6">
+      <img src="https://portal6.com.br/wp-content/uploads/2017/04/robo2.jpeg" class="card4" alt="..."
+        style="height: 350px; width: 100%;" />
+    </div>
+  </div>
+</div>

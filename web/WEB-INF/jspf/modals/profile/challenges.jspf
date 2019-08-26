@@ -1,0 +1,622 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+
+
+
+<!--                                    Compartilhar desafio                                    -->
+<div class="modal fade" id="CompDesafio" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="border-radius: 30px">
+      <div class="modal-header modal-top">
+        <h5 class="desafio-title">COMPARTILHAR DESAFIO</h5>
+        <button type="button" class="btn btn-light" id="btn-x" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="x">X</span></button>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <form>
+          <div class="form-group">
+            <input class="form-control" id="nmnn" aria-describedby="emailHelp"
+              style="border-radius: 15px; color: #8E959B; height: 60px;" name="apnom"
+              placeholder="Digite o(s) nome(s) ou apelido(s) do(s) colega(s) ou professor(es)" required>
+          </div>
+          <div class="input-group">
+            <textarea class="form-control scrll" rows="7" id="txtcomp" aria-label="With textarea" name="msgcomp"
+              placeholder="Mensagem (opcional) sobre o desafio que está compartilhando"
+              style="border-radius: 15px; resize: none; color: #8E959B; padding: 4% 3% 4% 3%;" required></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-info" id="btn-send" data-dismiss="modal" data-toggle="modal"
+          data-target="#CompSucesso">Enviar</button>
+        <button class="btn btn-lg btn-light" id="btn-cancel" data-dismiss="modal" data-toggle="modal"
+          data-target="#CompCancelar">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="CompCancelar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="border-radius: 30px">
+      <div class="modal-header modal-top">
+        <h5 class="desafio-title">CANCELAR COMPARTILHAMENTO</h5>
+        <button type="button" class="btn btn-light" id="btn-x" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="x">X</span></button>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <label style="padding: 100px 0px; color: #9E9E9E;">Deseja cancelar o compartilhamento do desafio?</label>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-info" id="btn-send" data-dismiss="modal">OK</button>
+        <button class="btn btn-lg btn-light" id="btn-cancel" data-dismiss="modal" data-toggle="modal"
+          data-target="#CompDesafio">Voltar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="CompSucesso" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="border-radius: 30px">
+      <div class="modal-header modal-top">
+        <h5 class="desafio-title">COMPARTILHADO</h5>
+        <button type="button" class="btn btn-light" id="btn-x" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="x">X</span></button>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <label style="padding: 100px 0px; color: #8E959B;">Você compartilhou o desafio com sucesso!</label>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-info" id="btn-send" data-dismiss="modal"
+          style="margin-right: 55%; position: relative;">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!--                                                Deu Tchun                                   -->
+<div class="modal fade" id="Tchun" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
+  data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="border-radius: 30px">
+      <div class="modal-header modal-top">
+        <h5 class="desafio-title">DEU TCHUN!</h5>
+        <button type="button" class="btn btn-light" id="btn-x" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="x">X</span></button>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <br />
+        <form>
+          <div class="row">
+            <div class="col">
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="defaultGroupExample1" name="groupOfDefaultRadios"
+                  value="option1" required>
+                <label class="custom-control-label" for="defaultGroupExample1">Com projeto</label>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="defaultGroupExample2" name="groupOfDefaultRadios"
+                  value="option2" onclick="return false;">
+                <label class="custom-control-label" for="defaultGroupExample2">Com ideia</label>
+              </div>
+            </div>
+
+            <div class="w-100"></div>
+
+            <div class="col">
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="defaultGroupExample3" name="groupOfDefaultRadios"
+                  value="option3" onclick="return false;">
+                <label class="custom-control-label" for="defaultGroupExample3">Com experiência</label>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="defaultGroupExample4" name="groupOfDefaultRadios"
+                  value="option4" onclick="return false;">
+                <label class="custom-control-label" for="defaultGroupExample4">Com formação </label>
+              </div>
+            </div>
+          </div>
+        </form>
+        <br />
+        <div>
+          <img src="<%= request.getContextPath()%>/res/images/profile/desafio.jpg" 
+            style="max-width: 100%; margin-top: 5%; margin-bottom: 5%">
+        </div>
+      </div>
+
+      <div class="modal-footer" style="margin-left: 5%">
+        <button class="btn btn-info" id="btn-send" data-dismiss="modal" data-toggle="modal" data-target="#TchunProjeto">Continuar</button>
+        <button class="btn btn-lg btn-light" id="btn-cancel" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade " id="TchunProjeto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="border-radius: 30px">
+      <div class="modal-header modal-top">
+        <h5 class="desafio-title"> DEU TCHUN! </h5>
+        <button type="button" class="btn btn-light" id="btn-x" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="x">X</span></button>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <br />
+        <label> <b> Escolha um dos seus projetos que pode resolver o desafio proposto pelo colaborador Arnaldo
+            Antunes.</b> </label>
+        <br /> <br />
+        <div>
+          <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+            <option value="0" selected>Escolha o seu projeto</option>
+            <option value="1">Teste</option>
+            <option value="2">Teste 2</option>
+          </select>
+
+          <div>
+            <img class="boxmodel"
+              src="https://http2.mlstatic.com/projeto-fazer-barcos-canoa-com-fundo-em-v-frete-gratis-D_NQ_NP_19932-MLB20179892561_102014-F.jpg">
+            <div class="custom-control custom-checkbox" style="margin-left: 65%; margin-top: -8%">
+              <input type="checkbox" class="custom-control-input" id="defaultUnchecked"
+                data-md-icheck>
+              <label class="custom-control-label" for="defaultUnchecked">Incluir Anexos</label>
+            </div>
+          </div>
+          <div>
+            <img class="boxmodel"
+              src="https://http2.mlstatic.com/bote-canoa-de-fibra-de-vidro-0-km-fabricaco-propria-D_NQ_NP_858379-MLB25795441763_072017-F.jpg">
+            <div class="custom-control custom-checkbox" style="margin-left: 65%; margin-top: -8%">
+              <input type="checkbox" class="custom-control-input" id="defaultUnchecked"
+                data-md-icheck>
+              <label class="custom-control-label" for="defaultUnchecked">Incluir Anexos</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-info" id="btn-send" data-dismiss="modal" data-toggle="modal"
+          data-target="#TchunChecked">Enviar</button>
+        <button class="btn btn-lg btn-light" id="btn-cancel" data-dismiss="modal">Cancelar</button>
+      </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-info" id="btn-send" data-dismiss="modal" data-toggle="modal"
+            data-target="#TchunUnchecked">Enviar</button>
+          <button class="btn btn-lg btn-light" id="btn-cancel" data-dismiss="modal">Cancelar</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade " id="TchunUnchecked" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="border-radius: 30px">
+      <div class="modal-header modal-top">
+        <h5 class="desafio-title"> DEU TCHUN! </h5>
+        <button type="button" class="btn btn-light" id="btn-x" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="x">X</span></button>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <br /> <br /> <br /> <br /> <br /> <br />
+        <p> Você está TCHUNANDO o projeto SEM ANEXOS. </p>
+        Deseja TCHUNAR mesmo assim?
+        <br /> <br /> <br /> <br /> <br /> <br />
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-info" id="btn-send" data-dismiss="modal" data-toggle="modal"
+          data-target="#TchunEnd">Enviar</button>
+        <button class="btn btn-lg btn-light" id="btn-cancel" data-dismiss="modal" data-toggle="modal"
+          data-target="#TchunProjeto">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade " id="TchunChecked" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="border-radius: 30px">
+      <div class="modal-header modal-top">
+        <h5 class="desafio-title"> DEU TCHUN! </h5>
+        <button type="button" class="btn btn-light" id="btn-x" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="x">X</span></button>
+      </div>
+      <form>
+        <div class="modal-body" style="text-align: center;">
+          <br /> <br /> <br /> <br /> <br />
+          <p> Você está TCHUNANDO seu projeto COM ANEXOS. </p>
+
+          <p>Você deve revisar e aceitar os nossos <a data-toggle="modal" data-dismiss="modal"
+              href="#TermosDeUso">Termos de Uso</a> e </p>
+          <p><a data-toggle="modal" data-dismiss="modal" href="#PoliticaDP">Política de Privacidade</a> para enviar
+            projetos com documentos anexos: </p>
+          <div class="custom-control custom-checkbox mb-3">
+            <input type="checkbox" class="custom-control-input" id="customCheck" name="example1"
+              required>
+            <label class="custom-control-label" for="customCheck">Li e aceito os Termos de Uso e Poĺítica de
+              Privacidade</label>
+          </div>
+          <br /> <br /> <br /> <br />
+        </div>
+      </form>
+      <div class="modal-footer">
+        <button class="btn btn-info" id="btn-send" data-dismiss="modal" data-toggle="modal"
+          data-target="#TchunEnd">Enviar</button>
+        <button class="btn btn-lg btn-light" id="btn-cancel" data-dismiss="modal" data-toggle="modal"
+          data-target="#TchunProjeto">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+            
+            
+
+<!--                                    Termos de Uso (Challenges)                                   -->
+<div class="modal fade " id="TermosDeUso" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+    <div class="modal-content" style="border-radius: 30px">
+      <div class="modal-header modal-top">
+        <h5 class="desafio-title"> TERMOS DE USO </h5>
+        <button type="button" class="btn btn-light" id="btn-x" data-dismiss="modal" data-toggle="modal" 
+          data-target="#TchunChecked" aria-label="Close" style="right: -2%; margin-top: -3%;"> 
+          <span aria-hidden="true" class="x">X</span></button>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <br />
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc finibus laoreet dignissim. Orci varius natoque
+          penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc eros felis, dapibus vitae gravida non,
+          commodo quis risus. In ut ex a eros iaculis ultrices. Nullam quis lorem a turpis tempus blandit in vel nisl.
+          Vestibulum non viverra arcu. Suspendisse euismod ante non diam condimentum varius eget a mauris. Suspendisse
+          lacinia turpis a mauris efficitur, nec imperdiet orci luctus. Morbi quis efficitur sapien. Integer nec libero
+          vel enim ullamcorper facilisis at quis tortor. Etiam lobortis lacus id volutpat tempor. </p>
+        <p>Praesent ultrices lectus mauris, ut porttitor justo tincidunt eget. Vivamus at metus in lectus dignissim
+          elementum nec id mi. Donec sed facilisis nisl, sed placerat leo. Class aptent taciti sociosqu ad litora
+          torquent per conubia nostra, per inceptos himenaeos. Cras eleifend sollicitudin odio in tincidunt. Sed
+          ultricies diam erat, in volutpat quam pretium id. Praesent sagittis, purus at euismod aliquet, massa nisl
+          fermentum quam, ac mollis enim ligula a tellus. Aenean ipsum urna, mollis eget posuere vitae, varius at nulla.
+        </p>
+        <p> Mauris at urna ac ligula viverra vehicula. Integer ultricies dui vitae luctus mollis. Sed tincidunt velit eu
+          eleifend aliquet. In maximus bibendum ex, sed consectetur nisl maximus eu. Aenean consequat molestie odio a
+          rhoncus. Proin nec congue metus. Nulla facilisi. Mauris sollicitudin dui odio, sed ornare lacus aliquam sed.
+          Phasellus porttitor ipsum sapien, sit amet faucibus turpis viverra quis. Cras vel turpis in tellus pretium
+          viverra at sed sem. In in urna gravida mi vehicula malesuada in vel ante. In fermentum purus massa, pulvinar
+          interdum nulla gravida egestas. </p>
+        <br />
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-info" id="btn-send" data-dismiss="modal" data-toggle="modal" style="left: 30%;"
+          data-target="#TchunChecked">OK</button>
+        <button class="btn btn-lg btn-light" id="btn-cancel" data-dismiss="modal" data-toggle="modal" style="right: 30%;"
+          data-target="#TchunProjeto">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!--                                          Termos de Uso (Footer)                                    -->
+<div class="modal fade " id="TermosDeUso2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content" style="border-radius: 30px">
+      <div class="modal-header modal-top">
+        <h5 class="desafio-title"> TERMOS DE USO </h5>
+        <button type="button" class="btn btn-light" id="btn-x" data-dismiss="modal" aria-label="Close" style="right: -2%; margin-top: -3%;">
+        <span aria-hidden="true" class="x">X</span></button>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <br />
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc finibus laoreet dignissim. Orci varius natoque
+          penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc eros felis, dapibus vitae gravida non,
+          commodo quis risus. In ut ex a eros iaculis ultrices. Nullam quis lorem a turpis tempus blandit in vel nisl.
+          Vestibulum non viverra arcu. Suspendisse euismod ante non diam condimentum varius eget a mauris. Suspendisse
+          lacinia turpis a mauris efficitur, nec imperdiet orci luctus. Morbi quis efficitur sapien. Integer nec libero
+          vel enim ullamcorper facilisis at quis tortor. Etiam lobortis lacus id volutpat tempor. </p>
+        <p>Praesent ultrices lectus mauris, ut porttitor justo tincidunt eget. Vivamus at metus in lectus dignissim
+          elementum nec id mi. Donec sed facilisis nisl, sed placerat leo. Class aptent taciti sociosqu ad litora
+          torquent per conubia nostra, per inceptos himenaeos. Cras eleifend sollicitudin odio in tincidunt. Sed
+          ultricies diam erat, in volutpat quam pretium id. Praesent sagittis, purus at euismod aliquet, massa nisl
+          fermentum quam, ac mollis enim ligula a tellus. Aenean ipsum urna, mollis eget posuere vitae, varius at nulla.
+        </p>
+        <p> Mauris at urna ac ligula viverra vehicula. Integer ultricies dui vitae luctus mollis. Sed tincidunt velit eu
+          eleifend aliquet. In maximus bibendum ex, sed consectetur nisl maximus eu. Aenean consequat molestie odio a
+          rhoncus. Proin nec congue metus. Nulla facilisi. Mauris sollicitudin dui odio, sed ornare lacus aliquam sed.
+          Phasellus porttitor ipsum sapien, sit amet faucibus turpis viverra quis. Cras vel turpis in tellus pretium
+          viverra at sed sem. In in urna gravida mi vehicula malesuada in vel ante. In fermentum purus massa, pulvinar
+          interdum nulla gravida egestas. </p>
+        <br />
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-info" id="btn-send" style="margin-right: 45%; position: relative; left: 0%;" 
+          data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!--                                       Termos de Política e Privacidade(Challenges)                             -->
+<div class="modal fade " id="PoliticaDP" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+    <div class="modal-content" style="border-radius: 30px">
+      <div class="modal-header modal-top">
+        <h5 class="desafio-title"> POLÍTICA DE PRIVACIDADE </h5>
+        <button type="button" class="btn btn-light" id="btn-x" data-dismiss="modal" data-toggle="modal" data-target="#TchunChecked" 
+          aria-label="Close" style="right: -2%; margin-top: -3%;">
+        <span aria-hidden="true" class="x">X</span></button>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <br />
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc finibus laoreet dignissim. Orci varius natoque
+          penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc eros felis, dapibus vitae gravida non,
+          commodo quis risus. In ut ex a eros iaculis ultrices. Nullam quis lorem a turpis tempus blandit in vel nisl.
+          Vestibulum non viverra arcu. Suspendisse euismod ante non diam condimentum varius eget a mauris. Suspendisse
+          lacinia turpis a mauris efficitur, nec imperdiet orci luctus. Morbi quis efficitur sapien. Integer nec libero
+          vel enim ullamcorper facilisis at quis tortor. Etiam lobortis lacus id volutpat tempor. </p>
+        <p>Praesent ultrices lectus mauris, ut porttitor justo tincidunt eget. Vivamus at metus in lectus dignissim
+          elementum nec id mi. Donec sed facilisis nisl, sed placerat leo. Class aptent taciti sociosqu ad litora
+          torquent per conubia nostra, per inceptos himenaeos. Cras eleifend sollicitudin odio in tincidunt. Sed
+          ultricies diam erat, in volutpat quam pretium id. Praesent sagittis, purus at euismod aliquet, massa nisl
+          fermentum quam, ac mollis enim ligula a tellus. Aenean ipsum urna, mollis eget posuere vitae, varius at nulla.
+        </p>
+        <p> Mauris at urna ac ligula viverra vehicula. Integer ultricies dui vitae luctus mollis. Sed tincidunt velit eu
+          eleifend aliquet. In maximus bibendum ex, sed consectetur nisl maximus eu. Aenean consequat molestie odio a
+          rhoncus. Proin nec congue metus. Nulla facilisi. Mauris sollicitudin dui odio, sed ornare lacus aliquam sed.
+          Phasellus porttitor ipsum sapien, sit amet faucibus turpis viverra quis. Cras vel turpis in tellus pretium
+          viverra at sed sem. In in urna gravida mi vehicula malesuada in vel ante. In fermentum purus massa, pulvinar
+          interdum nulla gravida egestas. </p>
+        <br />
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-info" id="btn-send" data-dismiss="modal" data-toggle="modal" style="left: 30%;"
+          data-target="#TchunChecked">OK</button>
+        <button class="btn btn-lg btn-light" id="btn-cancel" data-dismiss="modal" data-toggle="modal" style="right: 30%;"
+          data-target="#TchunProjeto">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!--                                           Termos de Política e Privacidade(Footer)                            -->
+<div class="modal fade" id="PoliticaDP2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+    <div class="modal-content" style="border-radius: 30px">
+      <div class="modal-header modal-top">
+        <h5 class="desafio-title"> POLÍTICA DE PRIVACIDADE </h5>
+        <button type="button" class="btn btn-light" id="btn-x" data-dismiss="modal" aria-label="Close" style="right: -2%; margin-top: -3%;">
+        <span aria-hidden="true" class="x">X</span></button>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <br />
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc finibus laoreet dignissim. Orci varius natoque
+          penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc eros felis, dapibus vitae gravida non,
+          commodo quis risus. In ut ex a eros iaculis ultrices. Nullam quis lorem a turpis tempus blandit in vel nisl.
+          Vestibulum non viverra arcu. Suspendisse euismod ante non diam condimentum varius eget a mauris. Suspendisse
+          lacinia turpis a mauris efficitur, nec imperdiet orci luctus. Morbi quis efficitur sapien. Integer nec libero
+          vel enim ullamcorper facilisis at quis tortor. Etiam lobortis lacus id volutpat tempor. </p>
+        <p>Praesent ultrices lectus mauris, ut porttitor justo tincidunt eget. Vivamus at metus in lectus dignissim
+          elementum nec id mi. Donec sed facilisis nisl, sed placerat leo. Class aptent taciti sociosqu ad litora
+          torquent per conubia nostra, per inceptos himenaeos. Cras eleifend sollicitudin odio in tincidunt. Sed
+          ultricies diam erat, in volutpat quam pretium id. Praesent sagittis, purus at euismod aliquet, massa nisl
+          fermentum quam, ac mollis enim ligula a tellus. Aenean ipsum urna, mollis eget posuere vitae, varius at nulla.
+        </p>
+        <p> Mauris at urna ac ligula viverra vehicula. Integer ultricies dui vitae luctus mollis. Sed tincidunt velit eu
+          eleifend aliquet. In maximus bibendum ex, sed consectetur nisl maximus eu. Aenean consequat molestie odio a
+          rhoncus. Proin nec congue metus. Nulla facilisi. Mauris sollicitudin dui odio, sed ornare lacus aliquam sed.
+          Phasellus porttitor ipsum sapien, sit amet faucibus turpis viverra quis. Cras vel turpis in tellus pretium
+          viverra at sed sem. In in urna gravida mi vehicula malesuada in vel ante. In fermentum purus massa, pulvinar
+          interdum nulla gravida egestas. </p>
+        <br />
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-info" id="btn-send" style="margin-right: 45%; position: relative; left: 0%;" 
+        data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!--                                     Solicitação de Mentoria                                        -->
+<div class="modal fade" id="MentorDesafio" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="border-radius: 30px">
+      <div class="modal-header modal-top">
+        <h5 class="desafio-title">SOLICITAÇÃO DE MENTORIA</h5>
+        <button type="button" class="btn btn-light" id="btn-x" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="x">X</span></button>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <form>
+          <div class="form-group">
+            <select class="form-control" style="border-radius: 15px; color: #8E959B; height: 60px;" name="area"
+              required>
+              <option hidden disabled selected>Escolha a área para a qual deseja mentoria</option>
+              <option>Administração e Negócios</option>
+              <option>Artes e Moda</option>
+              <option>Ciência da Computação</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <select class="form-control" style="border-radius: 15px; color: #8E959B; height: 60px;" name="mentor"
+              required>
+              <option hidden disabled selected>Escolha um mentor</option>
+              <option>Bill Gates</option>
+              <option>Robert Downey Jr.</option>
+              <option>Steve Jobs</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <textarea class="form-control scrll" rows="7" id="ideia" aria-label="With textarea"
+              placeholder="Descreva como o mentor pode ajudá-lo neste projeto" name="texto"
+              style="border-radius: 15px; resize: none; color: #8E959B; padding: 4% 3% 4% 3%;"
+              required></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-info" id="btn-send" data-dismiss="modal" data-toggle="modal"
+          data-target="#MentorSucesso">Enviar</button>
+        <button class="btn btn-lg btn-light" id="btn-cancel" data-dismiss="modal" data-toggle="modal"
+          data-target="#MentorCancelar">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="MentorSucesso" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="border-radius: 30px">
+      <div class="modal-header modal-top">
+        <h5 class="desafio-title">SOLICITAÇÃO DE MENTORIA ENVIADA</h5>
+        <button type="button" class="btn btn-light" id="btn-x" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="x">X</span></button>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <label style="padding: 100px 0px; color: #8E959B;">Mensagem enviada com sucesso!</label>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-info" id="btn-send" data-dismiss="modal"
+          style="margin-right: 55%; position: relative;">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="MentorCancelar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="border-radius: 30px">
+      <div class="modal-header modal-top">
+        <h5 class="desafio-title">CANCELAR SOLICITAÇÃO DE MENTORIA</h5>
+        <button type="button" class="btn btn-light" id="btn-x" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="x">X</span></button>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <label style="padding: 100px 0px; color: #8E959B;">Deseja cancelar a solicitação de mentoria?</label>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-info" id="btn-send" data-dismiss="modal">OK</button>
+        <button class="btn btn-lg btn-light" id="btn-cancel" data-dismiss="modal" data-toggle="modal"
+          data-target="#MentorDesafio">Voltar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!--                                        Enviar Mensagem                                             -->
+<div class="modal fade" id="EnviarMensagem" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="border-radius: 30px">
+      <div class="modal-header modal-top">
+        <h5 class="desafio-title">ENVIAR MENSAGEM </h5>
+        <button type="button" class="btn btn-light" id="btn-x" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="x">X</span></button>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <form>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" id="ideia" aria-describedby="basic-addon3"
+              placeholder="Para: Arnaldo Antunes" style="border-radius: 15px; color: #8E959B; height: 60px;" name="para"
+              required>
+          </div>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" id="ideia" aria-describedby="basic-addon3"
+              placeholder="Assunto: Projeto Casco de Navio" style="border-radius: 15px; color: #8E959B; height: 60px;"
+              name="assunto" required>
+          </div>
+          <div class="input-group">
+            <textarea class="form-control" rows="7" id="ideia" aria-label="With textarea" placeholder="Mensagem:"
+              name="msg" style="border-radius: 15px; resize: none; color: #8E959B; padding: 4% 3% 4% 3%;"
+              required></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-info" id="btn-send" data-dismiss="modal" data-toggle="modal"
+          data-target="#EnviadaMsg">Enviar</button>
+        <button class="btn btn-lg btn-light" id="btn-cancel" data-dismiss="modal" data-toggle="modal"
+          data-target="#CancelarMsg">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="EnviadaMsg" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="border-radius: 30px">
+      <div class="modal-header modal-top">
+        <h5 class="desafio-title">MENSAGEM ENVIADA</h5>
+        <button type="button" class="btn btn-light" id="btn-x" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="x">X</span></button>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <label style="padding: 100px 0px; color: #9E9E9E;">Mensagem enviada com sucesso!</label>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-info" id="btn-send" data-dismiss="modal">OK</button>
+        <button class="btn btn-lg btn-light" id="btn-cancel" data-dismiss="modal" data-toggle="modal"
+          data-target="#perfil">Sair</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="CancelarMsg" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="border-radius: 30px">
+      <div class="modal-header modal-top">
+        <h5 class="desafio-title">CANCELAR MENSAGEM</h5>
+        <button type="button" class="btn btn-light" id="btn-x" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="x">X</span></button>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <label style="padding: 100px 0px; color: #9E9E9E;">Deseja cancelar o envio da mensagem?</label>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-info" id="btn-send" data-dismiss="modal">OK</button>
+        <button class="btn btn-lg btn-light" id="btn-cancel" data-dismiss="modal" data-toggle="modal" 
+        data-target="#CompDesafio">Voltar</button>
+      </div>
+    </div>
+  </div>
+</div>

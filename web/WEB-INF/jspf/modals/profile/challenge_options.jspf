@@ -1,0 +1,18 @@
+<div class="middle-desafio">
+    <a href="#0" data-toggle="modal" data-target=""><img class="btn-desafio" style="filter: invert(1);"
+        src="<%= request.getContextPath()%>/res/images/profile/search.svg" alt="Image"></a><br />
+    <a href="#0" data-toggle="modal" data-target=""><img class="btn-desafio" style="filter: invert(1);"
+        src="<%= request.getContextPath()%>/res/images/profile/favorite.svg" alt="Image"></a><br />
+    <a href="#0" data-toggle="modal" data-target="#EnviarMensagem"><img class="btn-desafio"
+        style="filter: invert(1);" src="<%= request.getContextPath()%>/res/images/profile/bubble.svg" alt="Image"></a><br />
+    <a href="#0" data-toggle="modal" data-target=""><img class="btn-desafio" style="filter: invert(1);"
+        src="<%= request.getContextPath()%>/res/images/profile/calendar.svg" alt="Image"></a><br />
+    <a href="#0" data-toggle="modal" data-target="#MentorDesafio"><img class="btn-desafio"
+        style="filter: invert(1);" src="<%= request.getContextPath()%>/res/images/profile/personAdd.svg" alt="Image"></a><br />
+    <a href="#0" data-toggle="modal" data-target="#CompDesafio"><img class="btn-desafio"
+        style="filter: invert(1);" src="<%= request.getContextPath()%>/res/images/profile/share.svg" alt="Image"></a><br />
+    <a href="#0" data-toggle="modal" data-target=""><img class="btn-desafio" style="filter: invert(1);"
+        src="<%= request.getContextPath()%>/res/images/profile/star.svg" alt="Image"></a><br />
+    <a href="#0" data-toggle="modal" data-target="#Tchun"><img class="btn-desafio"
+        style="transform: rotate(270deg); filter: invert(1);" src="<%= request.getContextPath()%>/res/images/profile/wifi.svg" alt="Image"></a><br />
+</div>

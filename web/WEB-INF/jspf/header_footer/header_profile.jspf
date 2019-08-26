@@ -1,0 +1,30 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top flex" id="navbar">
+    <div class="flex-item-1 item-1">
+        <img src="<%= request.getContextPath() %>/res/images/antena_logo.png" alt="" id="logo" style="width: 15rem; margin-top: 5px;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" 
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>      
+    <div class=" navbar-collapse flex-item-1 item-2" id="navbarProfile">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="">PÁGINA INICIAL</a>
+            <a class="nav-item nav-link" href="">PORTFÓLIO</a>
+            <a class="nav-item nav-link" href="">EVENTOS</a>
+            <a class="nav-item nav-link" href="">NOTÍCIAS</a>
+            <a class="nav-item nav-link" href="">PRÊMIOS</a> 
+        </div>        
+    </div>
+    <div class="dropdown show flex-item-1 item-1">
+        <div class="navbar-nav" style="position: relative; float: right;">
+            <a class="nav-item nav-link" ><img src="<%= request.getContextPath() %>/res/images/profile/alertIcon.png" alt="" id="iconHeader"></a>
+            <a class="nav-item nav-link" ><img src="<%= request.getContextPath() %>/res/images/profile/msgIcon.png" alt="" id="iconHeader"></a>
+            <a class="nav-item nav-link" href="#modalSair" data-toggle="modal" data-target="#modalSair"><img src="<%= request.getContextPath() %>/res/images/profile/logoffIcon.png" alt="" id="iconHeader"></a>
+        </div>   
+    </div>
+</nav>
+
+<%@include file="../modals/profile/navbar.jspf" %>

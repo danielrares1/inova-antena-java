@@ -1,0 +1,706 @@
+<div class="modal fade" id="modalProject" tabindex="-1" role="dialog" aria-labelledby="modalProfileLabe"
+  aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">CADASTRO DE PROJETO</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" id="close-modal-profile" style="font-size: 15px"> VOLTAR</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div>
+          <h4>Os projetos que você participa formam o seu portfólio</h4>
+        </div>
+        <form action="">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="">Título do Projeto</label>
+              <input type="text" class="form-control" id="" name="titulo" placeholder="">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="">Orientador / Mentor / Colaborador</label>
+              <input type="text" class="form-control" id="" name="orientador" placeholder="">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <div class="form-row">
+                <label for="">Tema com o qual o projeto se alinha</label>
+                <input type="email" class="form-control" id="" name="tema" placeholder="" value="">
+              </div>
+              <div class="form-row">
+                <label for="">Tipo de Projeto</label>
+                <input type="text" class="form-control" id="" name="tipo" placeholder="" value="">
+              </div>
+              <div class="form-row">
+                <label for="">Status Atual do Projeto</label>
+                <input type="text" class="form-control" id="" name="status" placeholder="" value="">
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="">Descrição do Projeto</label>
+              <textarea class="form-control" name="descricao" id="" cols="60" rows="7" resize="none"></textarea>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type=" button" class="btn btn-danger" data-toggle="modal" data-target="#modalProjectUnits"
+          data-dismiss="modal" style="width: 140px; margin-right: 3%; font-size: 15px;
+          -webkit-border-radius: 30px; -moz-border-radius: 30px; border-radius: 30px;">PRÓXIMO</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalProjectUnits" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"> Escolha a unidade e os colaboradores do projeto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" id="close-modal-profile" style="font-size: 15px"> VOLTAR</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-row" style="padding: 20px;"> <!--*ngFor='let coop of coops; let i = index' class="form-row" style="padding: 20px;"-->
+          <div class="form-group col-md-6">
+            <label for="">Coop(s)</label>
+            <input id="coop" name="coop" class="form-control" placeholder="Coop" placeholder="">
+          </div>
+          <div class="form-group col-md-5">
+            <label for="">Unidade(s)</label>
+            <select id="unidade" name="unidade" placeholder="Unidade" class="form-control">
+              <option value=""></option>
+            </select>
+          </div>
+            <div> <!--*ngIf="i != 0" class="form-group col-md-1"-->
+            <a style="position:absolute; bottom: 15%; cursor: pointer"><i
+                class="fas fa-trash-alt"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger"
+        style="position:absolute; left: 4%; width: 170px; font-size: 15px; -webkit-border-radius: 30px; 
+        -moz-border-radius: 30px; border-radius: 30px;">ADD COLABORADOR</button>
+      <button type="button" class="btn btn-danger" data-dismiss="modal"
+        style="width: 140px; margin-right: 3%; font-size: 15px; -webkit-border-radius: 30px; -moz-border-radius: 30px; 
+        border-radius: 30px;">FINALIZAR</button>
+      <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="modal" style="width: 140px; margin-right: 3%; 
+        font-size: 15px; -webkit-border-radius: 30px; -moz-border-radius: 30px; border-radius: 30px;" 
+          data-target="#modalResources">CONTINUAR</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalProjectSuccess" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Uhuuu!</h5>
+      </div>
+      <div class="modal-body">
+        <p>Seu projeto foi cadastrado com sucesso! Agora você pode adicionar mais recursos, como imagens textos,
+          arquivos, códigos e outros tipos de documentos para complementar as informações do projeto. Clique no
+          botão "CONTINUAR" para concluir sua edição e voltar a sua página personalizada.</p>
+      </div>
+      <div class="modal-footer">
+        <div class="mr-auto">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">FINALIZAR</button>
+        </div>
+        <div>
+          <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="modal"
+            data-target="#modalResources">CONTINUAR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalResources" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">RECURSOS ADICIONAIS</h5>
+        <button type="button" class="close" data-dismiss="modal" data-toggle="modal" data-target="#modalProject"
+          aria-label="Close">
+          <span aria-hidden="true" id="close-modal-profile" style="font-size: 15px"> VOLTAR</span>
+        </button>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <div>
+          <h6>Clique nos botões abaixo e adicione recursos que complementam o seu projeto</h6>
+        </div>
+        <br /><br />
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-3">
+              <button type="button" class="btn-outline-dark" id="btn-recursos" data-dismiss="modal" data-toggle="modal"
+              data-target="#modalResImg"><b>Imagens</b></button>
+            </div>
+            <div class="col-sm-3">
+              <button type="button" class="btn-outline-dark" id="btn-recursos" data-dismiss="modal" data-toggle="modal"
+                data-target="#modalResText"><b>Textos</b></button>
+            </div>
+            <div class="col-sm-3">
+              <button type="button" class="btn-outline-dark" id="btn-recursos" data-dismiss="modal" data-toggle="modal"
+                data-target="#modalMidias"><b>Mídias</b></button>
+            </div>
+            <div class="col-sm-3">
+              <button type="button" class="btn-outline-dark" id="btn-recursos" ><b>Documentos</b></button>
+            </div>
+          </div>
+          <br /><br />
+          <div class="row">
+            <div class="col-sm-3">
+              <button type="button" class="btn-outline-dark" id="btn-recursos" data-dismiss="modal" data-toggle="modal"
+                data-target="#modalArquivos"><b>Arquivos</b></button>
+            </div>
+            <div class="col-sm-3">
+              <button type="button" class="btn-outline-dark" id="btn-recursos" data-dismiss="modal" data-toggle="modal"
+                data-target="#modalResCodes"><b>Códigos</b></button>
+            </div>
+            <div class="col-sm-3">
+              <button type="button" class="btn-outline-dark" id="btn-recursos" data-toggle="modal" data-target="#modalDetails" data-dismiss="modal" (click)="addlinhas()"><b>Detalhes</b></button>
+            </div>
+            <div class="col-sm-3">
+              <button type="button" class="btn-outline-dark" id="btn-recursos"  data-dismiss="modal" data-toggle="modal"
+              data-target="#modalResCapa"><b>Capa</b></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="modal-footer">
+        <button class="btn btn-danger" style="width: 140px; margin-right: 3%; font-size: 15px;
+          -webkit-border-radius: 30px; -moz-border-radius: 30px; border-radius: 30px;" data-dismiss="modal" 
+          >FINALIZAR</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!--                                            Texto                                                       -->
+<div class="modal fade" id="modalResText" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">CADASTRO DE TEXTO</h5>
+        <button type="button" class="close" data-dismiss="modal" data-toggle="modal" data-target="#modalResources"
+          aria-label="Close">
+          <span aria-hidden="true" id="close-modal-resources" style="font-size: 15px"> VOLTAR</span>
+        </button>
+      </div>
+      <div class="modal-body" style="text-align: left;">
+        <div>
+          <h6>Crie um texto para descrever pontos importantes do seu projeto</h6>
+        </div>
+        <br />
+        <label for="basic-text">Texto</label>
+        <div class="input-group">
+          <textarea class="form-control" rows="7" id="basic-text" aria-label="With textarea" name="txtProjeto"></textarea>
+        </div>
+        <br />
+        <label for="basic-url">Link complementar</label>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name="txtLink">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-danger btnSalvar" data-toggle="modal" data-dismiss="modal"
+          data-target="#modalMsg">SALVAR</button>
+        <button class="btn btn-danger" id="btnMaisRecursos" data-dismiss="modal" data-toggle="modal"
+          data-target="#modalResources">+ RECURSOS</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalMsg" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
+  data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header"></div>
+      <div class="modal-body" style="text-align: center;">
+        <h6>Você ainda pode editar o seu texto. Clique no botão "CONTINUAR" para retornar à edição do texto, ou clique
+          em "FINALIZAR" para concluir a edição e retornar à sua página personalizada.</h6>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-danger" data-dismiss="modal" data-toggle="modal" data-target="#modalResources" style="position: absolute; 
+          left: 4%; width: 140px; font-size: 15px; -webkit-border-radius: 30px; -moz-border-radius: 30px; border-radius: 30px;"
+          >FINALIZAR</button>
+        <button class="btn btn-danger"  data-dismiss="modal" data-toggle="modal" data-target="#modalResText" style="width: 140px; position: relative; 
+          right: 3%; font-size: 15px; -webkit-border-radius: 30px; -moz-border-radius: 30px; border-radius: 30px;" >CONTINUAR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+<!--                                            Imagem                                              -->
+<div class="modal fade" id="modalResImg" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-toggle="modal" data-dismiss="modal" data-target="#modalResources"
+                style="margin-left: 85%;margin-top: 1%" aria-label="Close">
+                <span aria-hidden="true" style="font-size: 10px"> VOLTAR</span></button> 
+            <h4 class="modal-title" id="imagemlabel1" style="margin-left: 5%">CADASTRO DE IMAGEM</h4>
+            <h5 class="modal-title" id="imagemlabel2" style="margin-left: 5%">Escolha as imagens que melhor
+                caracterizam o projeto</h5><br/>
+            <form>
+                <label style="margin-left: 5%"> Título da Imagem </label>
+                <input type="text" class="form-control" id="tituloImagem" name="tituloImagem" required><br/>
+                <label for="" style="margin-left: 5%"> Legenda </label>
+                <input type="text" class="form-control" id="legendaImagem" name="legendaImagem">
+                <div class="row justify-content-center">
+                    <input-file placeholder="" name="imagens" id="imagem" required></input-file>
+                </div>
+                <div class="col-md-3 offset-md-9"> 
+                    <button type="submit" class="btn btn-success" id="iImg"  style="margin-top: -100%">Adicionar outra foto.</button> 
+                </div>
+            </form>
+            <div style=" margin-left: 3%">
+                <div class="row justify-content-start">
+                    <div><!-- Começo FOR -->
+                        <div>
+                            <div class="col-md-2">
+                                <div class="relative-imagem">
+                                    <img style="max-width: 60px;"><!--src cod-->
+                                    <div class="absolute-imagem">
+                                        <img title="Excluir" style="max-width: 12px"><!--src del-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>      
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger btnSalvar" data-dismiss="modal" data-toggle="modal" data-target="#modalFinalizar">SALVAR</button>
+                <button type="button" class="btn btn-danger" id="btnMaisRecursos" data-dismiss="modal" data-toggle="modal" data-target="#modalResources" >+ RECURSOS</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalFinalizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <h4 style="margin-top: 20%; margin-left:5%">Você ainda pode adicionar outras imagens ao seu projeto. Clique no
+        botão "CONTINUAR" para acrescentar mais imagens, ou clique em "FINALIZAR" para concluir a edição e retornar à
+        sua página personalizada.</h4>
+      <button type="submit" class="btn btn-danger" id="btnFinalizar" data-dismiss="modal"
+        >FINALIZAR</button>
+      <button type="button" class="btn btn-danger" id="btnContinuar" data-dismiss="modal" data-toggle="modal"
+        data-target="#modalResImg">CONTINUAR</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalMsg2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header"></div>
+      <div class="modal-body" style="text-align: center;">
+        <h6>Você ainda pode adicionar outros códigos ao seu projeto. Clique no botão "CONTINUAR" para acrescentar mais
+          códigos, ou clique em "FINALIZAR" para concluir a edição e retornar à sua página personalizada.</h6>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-danger" data-dismiss="modal" data-toggle="modal" data-target="#modalResources" style="position: absolute; 
+          left: 4%; width: 140px; font-size: 15px; -webkit-border-radius: 30px; -moz-border-radius: 30px; border-radius: 30px;">FINALIZAR</button>
+        <button class="btn btn-danger"  data-dismiss="modal" data-toggle="modal" data-target="#modalMidias" style="width: 140px; position: relative; 
+          right: 3%; font-size: 15px; -webkit-border-radius: 30px; -moz-border-radius: 30px; border-radius: 30px;" >CONTINUAR</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!--                                                Códigos                                                 -->
+<div class="modal fade" id="modalResCodes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">CADASTRO DE CÓDIGOS</h5>
+        <button type="button" class="close" data-dismiss="modal" data-toggle="modal" data-target="#modalResources"
+          aria-label="Close">
+          <span aria-hidden="true" id="close-modal-resources" style="font-size: 15px"> VOLTAR</span>
+        </button>
+      </div>
+      <div class="modal-body" style="text-align: left;">
+        <div>
+          <h6>Incorpore códigos específicos ao seu projeto</h6>
+        </div>
+        <br />
+        <form>
+          <label for="">Título do Código</label>
+          <input type="text" class="form-control" id="t1" name="tituloCodigo" required><br />
+
+          <label for="">Subtítulo do Código</label>
+          <input type="text" class="form-control" id="t2" name="subtituloCodigo" required><br />
+
+          <label for="">Link de origem do Código</label>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" id="t3" name="linkCodigo" required>
+            <button type="submit" class="btn btn-success" id="iCode">INCORPORAR</button>
+          </div>
+        </form>
+        <div class="row justify-content-center">
+          <div>
+            <div>
+              <div class="col-md-2">
+                <div class="relative">
+                  <a href="javascript:void(0);" target="__blank"><img title={{arquivo.titulo}} style="max-width: 120px;"></a>
+                  <div class="absolute">
+                    <a href="javascript:void(1);"><img title="Excluir" style="max-width: 25px;"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <a href="javascript:void(0);"><img title=Adicionar style="max-width: 120px;"></a>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-danger btnSalvar" id="btn1" data-toggle="modal" data-dismiss="modal"
+          data-target="#modalMsg2">SALVAR</button>
+        <button class="btn btn-danger" id="btnMaisRecursos" data-dismiss="modal" data-toggle="modal"
+          data-target="#modalResources">+ RECURSOS</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!--                                        Mídias                                          -->
+<div class="modal fade" id="modalMidias" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable " role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">CADASTRO DE MÍDIA</h5>
+        <button type="button" class="close" data-dismiss="modal" data-toggle="modal" data-target="#modalResources"
+          aria-label="Close">
+          <span aria-hidden="true" id="close-modal-resources" style="font-size: 15px"> VOLTAR</span>
+        </button>
+      </div>
+      <div class="modal-body" style="text-align: left;">
+        <div>
+          <h6>Incorpore arquivos de mídia ao seu projeto</h6>
+        </div>
+        <br />
+        <label for="basic-url">Título da Mídia</label>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name="tituloMidia" required>
+        </div>
+        <label for="basic-url">Legenda</label>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name="legendaMidia" required>
+        </div>
+        <label for="basic-url">Link de origem da mídia</label>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"> 
+          <button type="button" class="btn btn-success video-btn" data-src="http://www.youtube.com/embed/M7lc1UVf-VE">INCORPORAR</button>
+        </div>
+        <div class="row justify-content-center">
+          <div>
+            <div>
+              <div class="col-md-2">
+                <div class="relative-midia">
+                  <a href="javascript:void(0);"><img title={{arquivo.titulo}} style="max-width: 160px;"
+                    class="video-btn" data-toggle="modal"
+                    data-src="http://www.youtube.com/embed/M7lc1UVf-VE" data-target="#myModal"></a>
+                  <div class="absolute-midia">
+                    <a href="javascript:void(1);"><img title="Excluir" style="max-width: 25px;"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <a href="javascript:void(0);"><img title=Adicionar style="max-width: 120px;"></a>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-danger btnSalvar" data-toggle="modal" data-dismiss="modal" id="btn2"
+          data-target="#modalMsg1">SALVAR</button>
+        <button class="btn btn-danger" data-dismiss="modal" data-toggle="modal" data-target="#modalResources"
+          id="btnMaisRecursos">+ RECURSOS</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always"
+              allow="autoplay"></iframe>
+          </div>
+        </div>
+        <div class="modal-footer justify-content-center">
+          <button type="button" class="btn btn-dark" data-dismiss="modal">VOLTAR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalMsg1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header"></div>
+      <div class="modal-body" style="text-align: center;">
+        <h6>Você ainda pode adicionar outros arquivos ao seu projeto. Clique no botão "CONTINUAR" para acrescentar
+          mais arquivos, ou clique em "FINALIZAR" para concluir a edição e retornar à sua página personalizada.</h6>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-danger" data-dismiss="modal" data-toggle="modal" data-target="#modalResources" style="position: absolute; 
+          left: 4%; width: 140px; font-size: 15px; -webkit-border-radius: 30px; -moz-border-radius: 30px; border-radius: 30px;">FINALIZAR</button>
+        <button class="btn btn-danger"  data-dismiss="modal" data-toggle="modal" data-target="#modalMidias" style="width: 140px; position: relative; 
+          right: 3%; font-size: 15px; -webkit-border-radius: 30px; -moz-border-radius: 30px; border-radius: 30px;" >CONTINUAR</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!--                                         Arquivos                                               -->  
+<div class="modal fade" id="modalArquivos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">CADASTRO DE ARQUIVOS</h5>
+        <button type="button" class="close" data-dismiss="modal" data-toggle="modal" data-target="#modalResources"
+          aria-label="Close">
+          <span aria-hidden="true" id="close-modal-resources" style="font-size: 15px"> VOLTAR</span>
+        </button>
+      </div>
+      <div class="modal-body" style="text-align: left;">
+        <div>
+          <h6>Incorpore os arquivos ao seu projeto</h6>
+        </div>
+        <br />
+        <form>
+          <label for="">Título do Arquivo</label>
+          <input type="text" class="form-control" id="" name="tituloArquivo" required><br />
+          <label for="">Subtítulo do Arquivo</label>
+          <input type="text" class="form-control" id="" name="subtituloArquivo" required><br />
+          <label for="">Link de origem do Arquivo</label>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" id="" name="linkArquivo" required>
+            <button type="submit" class="btn btn-success" id="iArquivo">INCORPORAR</button>
+          </div>
+        </form> 
+        <div class="row justify-content-center">
+          <div>
+            <div>
+              <div class="col-md-2">
+                <div class="relative-arquivos">
+                  <a href="javascript:void(0);" target="__blank"><img title={{arquivo.titulo}} style="max-width: 120px;"></a>
+                  <div class="absolute-arquivos">
+                    <a href="javascript:void(1);"><img title="Excluir" style="max-width: 25px;"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <a href="javascript:void(0);"><img title=Adicionar style="max-width: 120px;"></a>
+          </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-danger btnSalvar" id="btn3" data-toggle="modal" data-dismiss="modal"
+            data-target="#modalMsg1">SALVAR</button>
+          <button class="btn btn-danger" id="btnMaisRecursos" data-dismiss="modal" data-toggle="modal"
+            data-target="#modalResources">+ RECURSOS</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<div class="modal fade" id="modalMsg1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header"></div>
+      <div class="modal-body" style="text-align: center;">
+        <h6>Você ainda pode adicionar outros arquivos ao seu projeto. Clique no botão "CONTINUAR" para acrescentar
+          mais arquivos, ou clique em "FINALIZAR" para concluir a edição e retornar à sua página personalizada.</h6>
+      </div>
+      <div class="modal-footer">
+        <div class="mr-auto">
+          <button class="btn btn-danger" data-dismiss="modal">FINALIZAR</button>
+        </div>
+        <div>
+          <button class="btn btn-danger" data-dismiss="modal" data-toggle="modal"
+            data-target="#modalArquivos">CONTINUAR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!--                                                Detalhes                                                -->
+<div class="modal fade" id="modalDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">ADICIONAR DETALHES</h5><br>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true" id="close-modal-resources" style="font-size: 15px"> VOLTAR</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <h5>Complete seu projeto com mais informações relevantes</h5>
+        <div>
+          <div class="form-row" style="margin-top: 20px">
+            <div class="form-group col-md-6">
+              <label for="">Categoria(s)</label>
+              <input class="form-control"type="text" name="categ">
+            </div>
+            <div class="form-group col-md-5">
+              <label for="">Colaborador(es)</label>
+              <input type="text" class="form-control" name="colab">
+            </div>
+            <div class="col-md-1 icons-edit form-group">
+              <a class="c-icons" href="#0"><i class="fas fa-plus-circle" style="cursor: pointer"></i></a>
+              <ng-template>
+                <a class="c-icons" href="#0"><i class="fas fa-trash-alt" style="cursor: pointer; margin-left: 10px"></i></a>
+              </ng-template>
+            </div>
+          </div>
+          <div class="form-row"class="form-row">
+            <div class="form-group col-md-6">
+              <label for="">Recursos Utilizados</label>
+              <input class="form-control"type="text" name="rec">
+            </div>
+            <div class="form-group col-md-5">
+              <label for="">Premio(s) Conquistado(s)</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="col-md-1 icons-edit form-group">
+              <a class="c-icons" href="#0"><i class="fas fa-plus-circle" ></i></a>
+              <ng-template>
+                  <a class="c-icons" href="#0"><i class="fas fa-trash-alt" style="cursor: pointer; margin-left: 10px"></i></a>
+              </ng-template>
+             </div>
+          </div>
+          <div class="form-row" class="form-row">
+            <div class="form-group col-md-6">
+              <label for="">Direitos Autorais</label>
+              <input class="form-control"type="text" name="direitos">
+            </div>
+            <div class="form-group col-md-5">
+              <label for="">Créditos Adicionais</label>
+              <input type="text" class="form-control" name="creditos">
+            </div>
+            <div class="col-md-1 icons-edit form-group">
+               <a class="c-icons" href="#0"><i class="fas fa-plus-circle"></i></a>
+               <ng-template>
+                  <a class="c-icons" href="#0"><i class="fas fa-trash-alt" style="cursor: pointer; margin-left: 10px"></i></a>
+                </ng-template>
+              </div>
+          </div>
+        </div> 
+        
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger btnSalvar" data-dismiss="modal" data-toggle="modal" data-target="#modalResources">SALVAR</button>
+        <button type="button" class="btn btn-danger" id="btnMaisRecursos" data-dismiss="modal" data-toggle="modal" data-target="#modalResources">+ RECURSOS</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!--                                        Capa                                        -->
+<div class="modal fade" id="modalResCapa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+        <button type="button" class="close" data-toggle="modal" data-dismiss="modal" data-target="#modalResources" style="margin-left: 85%;margin-top: 1%" aria-label="Close">
+        <span aria-hidden="true" id="close-modal-resources" style="font-size: 15px"> VOLTAR</span>
+        </button>
+        <div class="modal-body">
+        <h4 class="modal-title" id="capalabel1" style="margin-left: 5%">CAPA DO PROJETO</h4>
+        <h5 class="modal-title" id="capalabel2" style="margin-left: 5%">Escolha uma imagem para a capa do seu projeto</h5> <br/>
+       
+        <form style="margin-left:40%; width: 200px; height: 300px;">
+            <input-file
+                placeholder="" style="margin-left:40" name="capa" fileAccept="image/*" fileLimit="1" required>
+            </input-file>
+        </form> 
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger btnSalvar" data-dismiss="modal" data-toggle="modal" data-target="#modalFinalizarCapa">SALVAR</button>
+        <button type="button" class="btn btn-danger" id="btnMaisRecursos" data-dismiss="modal" data-toggle="modal" data-target="#modalResources" >+ RECURSOS</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <div class="modal fade" id="modalFinalizarCapa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+            <h4 style="margin-top: 20%; margin-left:5%">Você pode substituir a imagens de capa do seu projeto. Clique no botão "CONTINUAR" para substituir a imagem de capa, ou clique em "FINALIZAR" para concluir a edição e retornar à sua página personalizada.</h4>
+            <button type="submit" class="btn btn-danger" id="btnFinalizar" data-dismiss="modal">FINALIZAR</button>
+            <button type="button" class="btn btn-danger" id="btnContinuar" data-dismiss="modal" data-toggle="modal" data-target="#modalResCapa">CONTINUAR</button>
+          </div>
+        </div>
+      </div>  
+
+

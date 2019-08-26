@@ -1,0 +1,294 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+
+<div class="modal fade" id="modalProfile" tabindex="-1" role="dialog" aria-labelledby="modalProfileLabe" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">CONFIGURAÇÃO DE PERFIL</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" id="close-modal-profile" style="font-size: 15px">VOLTAR</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <h6>Preencha os seus dados complementares</h6>
+                </div>
+                <form action="">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="">Nome</label>
+                            <input type="email" class="form-control" id="" name="nome1" placeholder="{{ aluno.nome }}" value="{{ aluno.nome }}" >
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="">Sobrenome</label>
+                            <input type="text" class="form-control" id="" name="sobrenome1" placeholder="{{ aluno.sobrenome }}"  value="{{ aluno.sobrenome }}">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="">R.A</label>
+                            <input type="text" class="form-control" id="" name="ra1" placeholder="{{ aluno.ra }}" value="{{ aluno.ra }}">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="">Unidade</label>
+                            <select id="" class="form-control">
+                                <option selected>{{ aluno.escola}}</option>
+                                <option>...</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="">E-mail</label>
+                            <input type="email" class="form-control" id="" name="email1" placeholder="{{ aluno.email }}" value="{{ aluno.email }}">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="">Telefone</label>
+                            <input type="text" class="form-control" id="" name="telefone1" placeholder="{{ aluno.telefone }}" value="{{ aluno.telefone }}">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="">Gênero</label>
+                            <select name="" id="" class="form-control">
+                                <option value="">Masculino</option>
+                                <option value="">Feminino</option>
+                                <option value="">Outros</option>
+                                <option value="" disabled selected hidden>{{ aluno.genero }}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="">RG</label>
+                            <input type="text" class="form-control" id="" name="rg1" placeholder="{{ aluno.rg }}" value="{{ aluno.rg }}">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="">CPF</label>
+                            <input type="text" class="form-control" id="" name="cpf1" placeholder="{{ aluno.cpf }}" value="{{ aluno.cpf }}">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="">Suas Redes Sociais</label>
+                            <div class="row">
+                                <div class="col-md-3"><a href="#0"><img class="social-logo" src="<%= request.getContextPath() %>/res/images/profile/facebook-logo.png" alt=""></a></div>
+                                <div class="col-md-3"><a href="#0"><img class="social-logo" src="<%= request.getContextPath() %>/res/images/profile/github-logo.png" alt=""></a></div>
+                                <div class="col-md-3"><a href="#0"><img class="social-logo" src="<%= request.getContextPath() %>/res/images/profile/google-logo.png" alt=""></a></div>
+                                <div class="col-md-3"><a href="#0"><img class="social-logo" src="<%= request.getContextPath() %>/res/images/profile/instagram-logo.png" alt=""></a></div>
+                            </div>
+                            <div class="row" style="margin-top:5%;">
+                                <div class="col-md-3"><a href="#0"><img class="social-logo" src="<%= request.getContextPath() %>/res/images/profile/linkedin-logo.png" alt=""></a></div>
+                                <div class="col-md-3"><a href="#0"><img class="social-logo" src="<%= request.getContextPath() %>/res/images/profile/twitter-logo.png" alt=""></a></div>
+                                <div class="col-md-3"><a href="#0"><img class="social-logo" src="<%= request.getContextPath() %>/res/images/profile/youtube-logo.png" alt=""></a></div>
+                                <div class="col-md-3"><a href="#0"><img class="social-logo" src="<%= request.getContextPath() %>/res/images/profile/pinterest-logo.png" alt=""></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="">Cargo</label>
+                            <input type="text" class="form-control" id="" name="cargo1" placeholder="{{ aluno.cargo }}" value="{{ aluno.cargo }}">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="">Empresa</label>
+                            <input type="text" class="form-control" id="" name="local1" placeholder="{{ aluno.local_trabalho }}" value="{{ aluno.local_trabalho }}">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalSalvarPerfil" data-dismiss="modal">SALVAR</button>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalMana1" data-dismiss="modal">PRÓXIMO</button>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#modalAboutMana">O que são Manas?</button>
+                </div>
+            </div>
+        </div>
+    </div>  
+</div>
+
+  <div class="modal fade" id="modalSalvarPerfil" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">PERFIL ATUALIZADO</h5>
+        </div>
+        <div class="modal-body" style="text-align: center;">
+            <div>
+                <h6>Uhuu! Seu perfil foi atualizado!</h6>
+            </div>
+            <br/>
+              <h6 style="display: inline">Agora você deve fazer uma <b>escolha:</b> Clique no </h6>
+              <h6 style="color: blue; display: inline"><b>botão azul </b></h6>
+              <h6 style="display: inline"> e o cadastro termina. Você vai acordar na sua escola ou faculdade e acreditará no que quer acreditar. Mas se clicar no </h6>
+              <h6 style="color: red; display: inline"><b>botão vermelho</b></h6>
+              <h6 style="display: inline">, você fica no Antena, configura os seus Manas e nós te levaremos a uma experiência gamificada, de autoconhecimento pessoal e profissional.</h6>
+              <br/><br/>
+              <h6 style="color: rgb(182, 2, 2)"><b>Lembre-se:</b> tudo o que oferecemos é uma rede de projetos e colaboração. Nada mais.</h6>
+        </div>
+          <div class="modal-footer">
+            <div>
+              <button class="btn btn-primary" data-dismiss="modal">FECHAR</button>
+            </div>
+            <div>          
+              <button class="btn btn-danger" data-toggle="modal" data-target="#modalMana1" data-dismiss="modal">PRÓXIMO</button>
+            </div>
+            <div>
+              <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#modalAboutMana">O que são Manas?</button>
+            </div>
+          </div> 
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalSalvarManas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">MANAS CONFIGURADOS</h5>
+        </div>
+        <div class="modal-body" style="text-align: center;">
+            <div>
+                <h6>Obaa! Seus Manas foram configuradas!</h6>
+            </div>
+            <br/>
+              <h6 style="display: inline">Agora você deve fazer uma <b>escolha:</b> Clique no </h6>
+              <h6 style="color: blue; display: inline"><b>botão azul </b></h6>
+              <h6 style="display: inline"> e o cadastro termina aqui. Você vai acordar na sua escola ou faculdade e acreditará no que quer acreditar. Mas se clicar no </h6>
+              <h6 style="color: red; display: inline"><b>botão vermelho</b></h6>
+              <h6 style="display: inline">, você fica no Antena, configura o seu Avatar e te levaremos a um nível ainda maior dessa experiência gamificada.</h6>
+              <br/><br/>
+              <h6 style="color: rgb(182, 2, 2)"><b>Lembre-se:</b> tudo o que oferecemos é uma rede de projetos e colaboração. Nada mais.</h6>
+        </div>
+        <div class="modal-footer">
+          <div>
+            <button class="btn btn-primary" data-dismiss="modal" (click)="fechar()">FECHAR</button>          
+          </div>
+          <div>
+            <button class="btn btn-danger" data-toggle="modal" data-target="#avatarModal" data-dismiss="modal">PRÓXIMO</button>
+          </div>
+          <div>
+              <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#modalAboutAvatar">O que é Avatar?</button>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="modalMana1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">CONFIGURAÇÃO DE MANAS</h5>
+        </div>
+        <div class="modal-body">
+          <h6> A partir das suas características, definiremos os seus Manas </h6>
+          <h6 style="color:darkkhaki; display: inline"><b>Deslize o botão redondo nas barras horizontais abaixo para definir seu nível de afinidade com cada afirmação, onde 0 significa nenhuma afinidade e 10 significa total afinidade:</b></h6>
+          <br /> <br />
+          <div class="slider-wrapper">
+          <h6>Adoro lidar com objetos, sua localização e visão sob diferentes perspectivas.</h6> 
+            <input type="range" min="0" max="10" value="7" step="1">
+          </div> 
+          <h6>Tenho capacidade de usar fórmulas e criar raciocínios lógicos, interpretando símbolos</h6> 
+          <div class="slider-wrapper">
+            <input type="range" min="0" max="10" value="7" step="1">
+          </div> 
+          <h6>Tenho facilidade e me sinto bem quando tenho que lidar com outras pessoas</h6> 
+          <div class="slider-wrapper">
+            <input type="range" min="0" max="10" value="7" step="1">
+          </div> 
+        </div>
+        <div class="modal-footer">
+          <div>
+            <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="modal" data-target="#modalSalvarManas">SALVAR</button>
+          </div>
+          <div>
+            <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="modal" data-target="#avatarModal">PRÓXIMO</button>
+          </div>
+          <div>
+              <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#modalAboutAvatar">O que é Avatar?</button>
+          </div>
+            <!-- <button type="button" class="btn btn-dark" data-dismiss="modal" data-toggle="modal" data-target="#modalProfile">Voltar</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="modal fade" id="modalAboutMana" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">SOBRE MANAS</h5>
+      </div>
+      <div class="modal-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dolor metus, dapibus eu tincidunt sit amet,
+        cursus et risus. Donec congue lacus sit amet elit malesuada mattis. Morbi urna metus, ornare id sapien et,
+        mollis maximus neque. Fusce mattis euismod mattis. Donec libero felis, consectetur id neque quis, dignissim
+        tempor ipsum. Aliquam et eros sed sapien fermentum malesuada eget et nisi. Nullam a sagittis erat. Pellentesque
+        est ex, gravida quis sapien et, eleifend semper lacus. Aenean facilisis eu justo hendrerit lobortis. Donec quis
+        ipsum sed velit dignissim maximus nec eu eros. Duis nec sapien eu ante tempus viverra nec in dolor. Maecenas in
+        dui massa. In et finibus eros. Donec bibendum tortor massa, sed fringilla ex vehicula at. Pellentesque sed
+        cursus erat, pellentesque consectetur mi. Integer auctor lobortis diam ut imperdiet.
+
+        Morbi sit amet dapibus leo. Etiam bibendum at velit vitae fermentum. Fusce cursus quis lacus sit amet dignissim.
+        Mauris ac risus volutpat, pulvinar turpis nec, malesuada erat. Curabitur quis euismod lorem. In at leo sit amet
+        neque tincidunt varius ut vel turpis. Integer in sem in lectus dapibus bibendum vitae ut enim. Vivamus fringilla
+        eleifend lacus ut suscipit.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark" data-dismiss="modal">VOLTAR</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalAboutAvatar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">SOBRE AVATAR</h5>
+      </div>
+      <div class="modal-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dolor metus, dapibus eu tincidunt sit amet,
+        cursus et risus. Donec congue lacus sit amet elit malesuada mattis. Morbi urna metus, ornare id sapien et,
+        mollis maximus neque. Fusce mattis euismod mattis. Donec libero felis, consectetur id neque quis, dignissim
+        tempor ipsum. Aliquam et eros sed sapien fermentum malesuada eget et nisi. Nullam a sagittis erat. Pellentesque
+        est ex, gravida quis sapien et, eleifend semper lacus. Aenean facilisis eu justo hendrerit lobortis. Donec quis
+        ipsum sed velit dignissim maximus nec eu eros. Duis nec sapien eu ante tempus viverra nec in dolor. Maecenas in
+        dui massa. In et finibus eros. Donec bibendum tortor massa, sed fringilla ex vehicula at. Pellentesque sed
+        cursus erat, pellentesque consectetur mi. Integer auctor lobortis diam ut imperdiet.
+
+        Morbi sit amet dapibus leo. Etiam bibendum at velit vitae fermentum. Fusce cursus quis lacus sit amet dignissim.
+        Mauris ac risus volutpat, pulvinar turpis nec, malesuada erat. Curabitur quis euismod lorem. In at leo sit amet
+        neque tincidunt varius ut vel turpis. Integer in sem in lectus dapibus bibendum vitae ut enim. Vivamus fringilla
+        eleifend lacus ut suscipit.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark" data-dismiss="modal">VOLTAR</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalFinished" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><b>Ufa! Agora sim!</b></h5>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <h6>Você completou o seu cadastro com sucesso! Agora você é um ANTENADO!</h6>
+      </div>
+      <div class="modal-footer">
+        <div>
+          <button class="btn btn-danger" data-dismiss="modal">CONTINUAR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
