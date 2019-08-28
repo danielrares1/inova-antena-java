@@ -6,19 +6,22 @@
         <title>Perfil - Antena CPS</title>
         <link rel="shortcut icon" href="<%=request.getContextPath()%>/res/images/favicon.ico" />
         
-        <!-- Bootstrap CSS -->
+        <!-- CSS -->
         <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/res/styles/styles_profile.css">
+        
+        <!-- Head references -->
+        <%@include file="../../WEB-INF/jspf/head_references.jspf" %>
     </head>
         <body class="background" id="border">
         
         <!-- Header Profile -->
-        <%@include file="../../WEB-INF/jspf/header_footer/header_profile.jspf" %>
+        <%@include file="../../WEB-INF/jspf/header.jspf" %>
         
         <div class="container" style="margin-top: 250px">
             <div class="row">
                 <div class="col-md-4">
                     <div class="row" id="icons" style="margin-top: 120px; margin-left: -15px; margin-right: -50px;">
-                        <div class="col-sm-3" id="icon"><a target="__blank"><img src="<%= request.getContextPath()%>/res/images/profile/iconAwards.png" alt=""></a>
+                        <div class="col-sm-3" id="icon"><a><img src="<%= request.getContextPath()%>/res/images/profile/iconAwards.png" alt=""></a>
                             <h6 style="margin-left: 20%; color: #fff;">Prêmios</h6>
                         </div>
                         <div class="col-sm-3" id="icon"><a href="#/agenda"><img src="<%= request.getContextPath()%>/res/images/profile/iconEvent.png" alt=""></a>
@@ -34,7 +37,7 @@
                 </div>
                 <div class="col-md-4" id="profile">
                     <div class="profile-name" id="name">
-                        
+                        <h1>Nome completo parceiro</h1>
                     </div>
                     <div id="profile-image">
                         <img id="profile-pic" src="<%= request.getContextPath()%>/res/images/profile/profilePic.jpg" alt="" style="border: #72A5FF solid;">
@@ -90,10 +93,9 @@
         </div>
             
         <!-- Footer -->
-        <%@include file="../../WEB-INF/jspf/header_footer/footer_profile.jspf" %>
-   
-    </body>
-    
-    <%@include file="../../WEB-INF/jspf/imports.jspf" %>
-    
+        <%@include file="../../WEB-INF/jspf/footer.jspf" %>
+        
+        <!-- Scripts -->
+        <%@include file="../../WEB-INF/jspf/body_scripts.jspf" %>
+    </body>    
 </html>

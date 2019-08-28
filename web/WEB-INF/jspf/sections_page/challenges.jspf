@@ -26,7 +26,7 @@
                 </div>
                 <div class="carousel-item" style="max-width: 50%;">
                     <div class="container-desafio">
-                        <img src="<%= request.getContextPath()%>/res/images/profile/imgTeste.jpg" alt="Image" class="image-desafio img-fluid d-block" style="max-width: 100%;">
+                        <img src="<%= request.getContextPath()%>/res/images/profile/imgTeste.jpg" alt="Image" class="image-desafio" style="max-width: 100%;">
                         <div class="text-image">IMAGEM 3</div>
                         <%@include file="../modals/profile/challenge_options.jspf" %>
                     </div>

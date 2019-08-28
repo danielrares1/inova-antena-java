@@ -1,0 +1,89 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+
+<!-- Footer home
+<br/>
+    <footer id="footer" class="footer-1">
+        <div class="main-footer widgets-dark typo-light">
+            <div class="container">
+                <div class="row">
+ 
+        <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="widget no-box">
+                <ul class="thumbnail-widget">
+                    <li>
+                        <div class="thumb-content"><a href="#."><b>INÍCIO</b></a></div>	
+                    </li>
+                    <li>
+                        <div class="thumb-content"><a href="#."><b>SOBRE NÓS</b></a></div>	
+                    </li>
+                </ul>
+            </div>
+        </div> 
+ 
+  
+        <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="widget subscribe no-box">
+                <h5 class="widget-title"><b>ENDEREÇO</b><span></span></h5>
+                <img id="marker" src="<%= request.getContextPath() %>/res/images/icons/pin.png">
+                Rua dos Andradas, 
+                <p>  &nbsp;  &nbsp;  &nbsp; 140 - 5.º andar </p>
+                <P>Santa Ifigênia - São Paulo/SP</p>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="widget no-box">
+                <h5 class="widget-title"><b>CONTATO</b><span></span></h5>
+                <img id="marker" src="<%= request.getContextPath() %>/res/images/icons/email.png">
+                E-MAIL
+                <p> inova@inovapaulasouza.sp.gov.br </p>
+  
+                <img id="marker" src="<%= request.getContextPath() %>/res/images/icons/phone.png">
+                TELEFONE
+                <p>   (11) 3324.3336 </p>
+
+                <ul class="social-footer2">
+                  
+                    <li class=""><a href="https://www.facebook.com/inovapaulasouza" target="_blank" title="Facebook"><img alt="Facebook" width="30" height="30" src="<%= request.getContextPath() %>/res/images/icons/facebook.png"></a></li>
+                    <li class=""><a href="https://twitter.com/InovaPaulaSouza" target="_blank" title="Twitter"><img alt="Twitter" width="30" height="30" src="<%= request.getContextPath() %>/res/images/icons/twitter.png"></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="widget no-box">
+                <a href="http://www.cps.sp.gov.br/" target="_blank"><img id="logocps" src="<%= request.getContextPath() %>/res/images/logocps.png"> <br/><br/></a>
+                <a href="http://www.saopaulo.sp.gov.br/" target="_blank"><img id="logogov" src="<%= request.getContextPath() %>/res/images/logogov.png"></a>
+            </div>
+        </div>
+
+
+
+            </div>
+                <div id="release">
+                    <a href=""><small class="text-muted">v.01.08.19</small></a>
+                </div>
+        </div>
+    </div>
+  
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p>Copyright © - INOVA Paula Souza.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+</footer>
+-->
+            
+<!-- Footer usuário logado -->
+<footer class="perfil-footer">
+    <div class="footer-copyright text-muted text-center py-3">
+        <a data-toggle="modal" href="#TermosDeUso2" class="text-muted">Termos de Uso</a> | <a 
+            data-toggle="modal" href="#PoliticaDP2" class="text-muted">Política de Privacidade e Segurança </a> | 
+            INOVA CPS - Centro Paula Souza - 2019 ®
+    </div>
+</footer>            
