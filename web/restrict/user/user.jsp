@@ -1,4 +1,3 @@
-<%@page import="java.sql.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -12,8 +11,15 @@
         <!-- Head references -->
         <%@include file="../../WEB-INF/jspf/head_references.jspf" %>
     </head>
-        <body class="background" id="border">
-        
+    <body class="background" id="border">
+        <%
+            String email = (String) session.getAttribute("email");
+            String nome = (String) session.getAttribute("nome");
+            String sobrenome = (String) session.getAttribute("sobrenome");
+            if (email == null || email.isEmpty()) {
+                response.sendRedirect("../../home.jsp");
+            }
+        %>
         <!-- Header Profile -->
         <%@include file="../../WEB-INF/jspf/header.jspf" %>
         
@@ -37,7 +43,7 @@
                 </div>
                 <div class="col-md-4" id="profile">
                     <div class="profile-name" id="name">
-                        <h1>Nome completo parceiro</h1>
+                        <h1><%= nome %> <%= sobrenome %></h1>
                     </div>
                     <div id="profile-image">
                         <img id="profile-pic" src="<%= request.getContextPath()%>/res/images/profile/profilePic.jpg" alt="" style="border: #72A5FF solid;">

@@ -48,47 +48,47 @@
                     </div>
                     <div class="modal-body">
                         <div>
-                            <form>
-                            <label id="labelEmail" for="email">E-mail</label>
-                            <br/>
-                            <input type="text" id="username" value="" class="camposform" name="email"/>
-                            <br/><br/>
-                            <label id="labelSenha" for="password">Senha</label>
-                            <br/>
-                            <input type="password" id="password" class="camposform" name="password"/>
-                            <label id="ouAcesse"> Ou acesse: </label> 
-                            <button id="btnEntrar" class="btn btn-lg btn-danger" type="button" 
-                                onclick="window.location='/restrict/user/user.jsp'" style="margin-left: -82%;"><b>ENTRAR</b>
-                            </button> 
-                            <br/>
-                            <a data-toggle="modal" id="clickPassword" data-target="#passwordModal" data-dismiss="modal"
-                                href="#0" style="font-size: 12px; margin-left: 7%">Esqueceu sua senha?</a>
-                            <div id="iconF">  
-                                <a><img id="facebookImage" src="<%= request.getContextPath()%>/res/images/fbAccessBt.png"
-                                    style="max-width: 27px" alt=""/></a>
-                            </div>
-                            <div id="iconL">
-                                <a><img id="linkedinImage" src="<%= request.getContextPath()%>/res/images/inAccessBt.png"
-                                    style="max-width: 27px" alt=""/></a>
-                            </div>
-                            <div id="iconG">
-                                <a><img id="googleImage" src="<%= request.getContextPath()%>/res/images/gglAccessBt.png"
-                                    style="max-width: 27px" alt=""/></a>
-                            </div>
-                            <br/><br/>
-                            <div id="primeiroAcesso">
-                                <p>Primeiro acesso? Cadastre-se <a href="/register.jsp">aqui</a>.</p>
-                            </div>
-                            <div>
-                                <button id="close-modal-login" class="close" data-dismiss="modal"
-                                    aria-label="Close" style="margin-right: 80%; font-size: 10px"><u>VOLTAR</u>
-                                </button>
+                            <form action="data/login.jsp">
+                                <label id="labelEmail" for="email">E-mail</label>
                                 <br/>
-                            </div>
-                            <!-- <div id="center">
-                                <button type="button"  size="lg" class="btn btn-primary" id="fbcolor" ><i class="fab fa-facebook-f left"></i></button>
-                                <button (click)="lgGoogle()" size="lg"  class="btn btn-secundary" id="ggcolor" >G</button>
-                            </div> -->
+                                <input type="text" id="username" value="" class="camposform" name="email"/>
+                                <br/><br/>
+                                <label id="labelSenha" for="password">Senha</label>
+                                <br/>
+                                <input type="password" id="password" class="camposform" name="password"/>
+                                <label id="ouAcesse"> Ou acesse: </label> 
+                                <button id="btnEntrar" class="btn btn-lg btn-danger" type="submit" 
+                                     style="margin-left: -82%;"><b>ENTRAR</b>
+                                </button> 
+                                <br/>
+                                <a data-toggle="modal" id="clickPassword" data-target="#passwordModal" data-dismiss="modal"
+                                    href="#0" style="font-size: 12px; margin-left: 7%">Esqueceu sua senha?</a>
+                                <div id="iconF">  
+                                    <a><img id="facebookImage" src="<%= request.getContextPath()%>/res/images/fbAccessBt.png"
+                                        style="max-width: 27px" alt=""/></a>
+                                </div>
+                                <div id="iconL">
+                                    <a><img id="linkedinImage" src="<%= request.getContextPath()%>/res/images/inAccessBt.png"
+                                        style="max-width: 27px" alt=""/></a>
+                                </div>
+                                <div id="iconG">
+                                    <a><img id="googleImage" src="<%= request.getContextPath()%>/res/images/gglAccessBt.png"
+                                        style="max-width: 27px" alt=""/></a>
+                                </div>
+                                <br/><br/>
+                                <div id="primeiroAcesso">
+                                    <p>Primeiro acesso? Cadastre-se <a href="/register.jsp">aqui</a>.</p>
+                                </div>
+                                <div>
+                                    <button id="close-modal-login" class="close" data-dismiss="modal"
+                                        aria-label="Close" style="margin-right: 80%; font-size: 10px"><u>VOLTAR</u>
+                                    </button>
+                                    <br/>
+                                </div>
+                                <!-- <div id="center">
+                                    <button type="button"  size="lg" class="btn btn-primary" id="fbcolor" ><i class="fab fa-facebook-f left"></i></button>
+                                    <button (click)="lgGoogle()" size="lg"  class="btn btn-secundary" id="ggcolor" >G</button>
+                                </div> -->
                             </form>
                         </div>
                     </div>

@@ -1,7 +1,11 @@
 <%-- any content can be specified here e.g.: --%>
 <%@ page pageEncoding="UTF-8" %>
 
-<!-- Footer home
+<% 
+    if (session.getAttribute("email") == null || session.getAttribute("email").toString().isEmpty())  { 
+%>
+    
+<!-- Footer home -->
 <br/>
     <footer id="footer" class="footer-1">
         <div class="main-footer widgets-dark typo-light">
@@ -77,8 +81,11 @@
             </div>
         </div>
 </footer>
--->
-            
+        
+<% 
+    } else { 
+%>
+
 <!-- Footer usuário logado -->
 <footer class="perfil-footer">
     <div class="footer-copyright text-muted text-center py-3">
@@ -86,4 +93,8 @@
             data-toggle="modal" href="#PoliticaDP2" class="text-muted">Política de Privacidade e Segurança </a> | 
             INOVA CPS - Centro Paula Souza - 2019 ®
     </div>
-</footer>            
+</footer>   
+
+<% 
+    }
+%>

@@ -1,12 +1,18 @@
 <%-- any content can be specified here e.g.: --%>
 <%@ page pageEncoding="UTF-8" %>
+    
+<% 
+    if (session.getAttribute("email") == null || session.getAttribute("email").toString().isEmpty())  { 
+%>
 
-<!-- Header Home -->
+    <!-- Header Home -->
 <nav class="navbar navbar-light bg-light fixed-top">
     <a href="/home.jsp"><img id="logo" 
         src="<%= request.getContextPath() %>/res/images/antena_logo.png" 
         alt="logo" style="width: 15rem;"/></a>
 </nav>
+        
+<% } else { %>
 
 <!-- Header usuário logado -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top flex" id="navbar">
@@ -34,7 +40,9 @@
         </div>   
     </div>
 </nav>
-        
+            
+<% } %>
+
 <!-- Modals navbar -->
 
 <div class="modal fade" id="modalSair" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
@@ -51,8 +59,7 @@
             </div>
             <div class="modal-footer">
                 <div class="mr-auto">
-                    <button class="btn btn-danger" data-dismiss="modal" 
-                        onclick="window.location='/home.jsp'">Encerrar</button>          
+                    <button class="btn btn-danger" onclick="window.location='<%=request.getContextPath()%>/../../data/logout.jsp'">Encerrar</button>          
                 </div>
                 <div>
                     <button class="btn btn-secondary" data-dismiss="modal">Cancelar</button>

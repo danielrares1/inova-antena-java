@@ -51,29 +51,30 @@ public class ConnectionPool extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet NewServlet at " + request.getContextPath() + "</h1>");
-               try {
+            out.println("<form action='ConnectionPool' >");
+            out.println("<input type='text' id='username' name='uemail' />");
+            out.println("<input type='password' id='password' name='usenha' />");
+            out.println("<input type='submit' value='Enviar'/>");
+
+
+            try {
             Context initContext = new InitialContext();
             Context envContext  = (Context)initContext.lookup("java:/comp/env");
             DataSource ds = (DataSource)envContext.lookup("jdbc/AntenaCPS");
             con = ds.getConnection();
             out.println("<H3>"+"Conectou!"+"</H3>");
             stmt = con.createStatement();
-            rs = stmt.executeQuery("select id_geral, nome from parceiros order by id_geral");
-            response.setContentType("text/html");
-            out.print("<html><body><h2>Detalhes parceiro</h2>");
-            out.print("<table border=\"1\" cellspacing=10 cellpadding=5>");
-            out.print("<th>Parceiro - ID</th>");
-            out.print("<th>Parcerio - Nome</th>");
+            rs = stmt.executeQuery("select * from parceiros where email = '"+
+            request.getParameter("uemail")+"' and senha = '" + request.getParameter("usenha") + "'");
             
-            while(rs.next())
+            if (rs.next())
             {
-                out.print("<tr>");
-                out.print("<td>" + rs.getInt("id_geral") + "</td>");
-                out.print("<td>" + rs.getString("nome") + "</td>");
-                out.print("</tr>");
+            out.println("Logado");
+            } else {
+            out.println("Não logado");
             }
-            out.print("</table></body><br/>");
-            } catch ( SQLException | NamingException e){
+
+ } catch ( SQLException | NamingException e){
             out.println("<h2>"+e.getMessage()+"</h2>");
             } finally {
                 try{con.close();
