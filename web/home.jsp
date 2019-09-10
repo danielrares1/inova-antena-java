@@ -25,7 +25,7 @@
                     <button type="button" class="btn btn-danger btn-lg" id="openModal" data-toggle="modal" data-target="#modalLogin" style="width: 200px">ENTRAR</button>
                     <button hidden data-toggle="modal" data-target="#modalLogin" id="openModal2"></button>
                     <button hidden data-toggle="modal" data-target="#modalCont" id="openModalCont"></button>
-                </div> 
+                </div>
             </div>
         </div>
         <div id="background">

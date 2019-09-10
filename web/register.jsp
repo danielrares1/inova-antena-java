@@ -20,7 +20,7 @@
             <div class="register" style="text-align: center">
                 <div><h4><strong>Cadastre-se e seja um antenado!</strong></h4></div>
                 <div><p>Vai ser rápido! Basta preencher os seguintes dados:</p></div>
-                <form>
+                <form action="data/registerUser.jsp.jsp">
                     <div class="row">
                         <div class="col-6">
                             <div class="form-group">
@@ -41,7 +41,7 @@
                         <div class="col-6"> 
                             <div class="form-group">
                                 <label for="email">E-mail</label>
-                                <input id="email" type="email" class="form-control" name="email"/>
+                                <input id="email" type="email" class="form-control" name="emailRegister"/>
                                 <div>
                                     <div>Digite seu email</div>
                                     <div>Digite um email válido</div>
@@ -51,7 +51,7 @@
                         <div class="col-6"> 
                             <div class="form-group">
                                 <label for="password">Senha</label>
-                                <input type="password" class="form-control" name="password"/>
+                                <input type="password" class="form-control" name="passwordRegister"/>
                                 <div>
                                     <div>Digite sua senha</div>
                                     <div>A senha deve conter 6 dígitos</div>
@@ -62,7 +62,7 @@
                     <div class="col-14">
                         <div class="form-group">
                             <label for="option">Você é:</label>
-                            <select class="form-control">
+                            <select class="form-control" name="nivel">
                                 <option value="Aluno">Aluno</option>
                                 <option value="Professor">Professor</option>
                                 <option value="Gestor">Gestor</option>
@@ -70,16 +70,16 @@
                             </select>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <button id= "btnEntrar" class="btn btn-danger" style="margin-top: 2%;" type="submit">ENTRAR</button>
+                        <div class="icons-register">
+                            <div  id="icon1"><a href=""><img src="<%= request.getContextPath()%>/res/images/fbAccessBt.png" style="max-width: 27px" alt=""></a></div>
+                            <div  id="icon1"><a href=""><img src="<%= request.getContextPath()%>/res/images/gglAccessBt.png" style="max-width: 27px" alt=""></a></div>
+                            <div  id="icon1"><a href=""><img src="<%= request.getContextPath()%>/res/images/inAccessBt.png" style="max-width: 27px" alt=""></a></div>
+                            <!-- <div class="col-sm-3" id="icon"><a href=""><img [src]="shield" alt=""></a></div> -->
+                        </div> 
+                    </div>
                 </form>
-                <div class="form-group">
-                    <button id= "btnEntrar" class="btn btn-danger" style="margin-top: 2%;">ENTRAR</button>
-                    <div class="icons-register">
-                        <div  id="icon1"><a href=""><img src="<%= request.getContextPath()%>/res/images/fbAccessBt.png" style="max-width: 27px" alt=""></a></div>
-                        <div  id="icon1"><a href=""><img src="<%= request.getContextPath()%>/res/images/gglAccessBt.png" style="max-width: 27px" alt=""></a></div>
-                        <div  id="icon1"><a href=""><img src="<%= request.getContextPath()%>/res/images/inAccessBt.png" style="max-width: 27px" alt=""></a></div>
-                        <!-- <div class="col-sm-3" id="icon"><a href=""><img [src]="shield" alt=""></a></div> -->
-                    </div> 
-                </div>
                 <div id="palavras">
                     <p>ou cadastre:</p>
                 </div>
