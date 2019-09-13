@@ -4,10 +4,10 @@
     <head>
         <title>Perfil - Antena CPS</title>
         <link rel="shortcut icon" href="<%=request.getContextPath()%>/res/images/favicon.ico" />
-        
+
         <!-- CSS -->
         <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/res/styles/styles_profile.css">
-        
+
         <!-- Head references -->
         <%@include file="../../WEB-INF/jspf/head_references.jspf" %>
     </head>
@@ -23,7 +23,7 @@
         %>
         <!-- Header Profile -->
         <%@include file="../../WEB-INF/jspf/header.jspf" %>
-        
+
         <div class="container" style="margin-top: 250px">
             <div class="row">
                 <div class="col-md-4">
@@ -44,15 +44,15 @@
                 </div>
                 <div class="col-md-4" id="profile">
                     <div class="profile-name" id="name">
-                        <h1><%= nome %> <%= sobrenome %></h1>
+                        <h1><%= nome%> <%= sobrenome%></h1>
                     </div>
                     <div id="profile-image">
                         <img id="profile-pic" src="<%= request.getContextPath()%>/res/images/profile/profilePic.jpg" alt="" style="border: #72A5FF solid;">
                         <a href="#0" data-toggle="modal" data-target="#modalProfile"><i class="fas fa-cog fa-3x"
-                            style="font-size: 2em"></i></a>
+                                                                                        style="font-size: 2em"></i></a>
                     </div>
                     <div id="user-info">
-                        <div class="" style="margin-top: -5px;"><%= senhaHash %></div>
+                        <div class="" style="margin-top: -5px;"><%= senhaHash%></div>
                         <div class="" style="margin-top: -5px;">20 anos</div>
                         <div class="" style="margin-top: -5px;">Estudante</div>
                     </div>
@@ -81,27 +81,27 @@
                 </div>
             </div>
             <%@include file="../../WEB-INF/jspf/modals/profile/student.jspf"%>
-            
+
             <!-- Portfolio -->
             <%@include file="../../WEB-INF/jspf/sections_page/portfolio.jspf"%>
             <%@include file="../../WEB-INF/jspf/modals/profile/project.jspf"%>
-                        
+
             <!-- Desafios -->
             <%@include file="../../WEB-INF/jspf/sections_page/challenges.jspf"%>
             <%@include file="../../WEB-INF/jspf/modals/profile/challenges.jspf"%>
-            
+
             <!-- Eventos -->
             <%@include file="../../WEB-INF/jspf/sections_page/events.jspf"%>
 
             <!-- Noticias -->
             <%@include file="../../WEB-INF/jspf/sections_page/news.jspf"%>
-              
+
             <button hidden id="openModalFirst" data-toggle="modal" data-target="#modalFirst"></button>
         </div>
-            
+
         <!-- Footer -->
         <%@include file="../../WEB-INF/jspf/footer.jspf" %>
-        
+
         <!-- Scripts -->
         <%@include file="../../WEB-INF/jspf/body_scripts.jspf" %>
     </body>    
