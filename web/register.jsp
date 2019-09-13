@@ -20,7 +20,7 @@
             <div class="register" style="text-align: center">
                 <div><h4><strong>Cadastre-se e seja um antenado!</strong></h4></div>
                 <div><p>Vai ser rápido! Basta preencher os seguintes dados:</p></div>
-                <form action="data/registerUser.jsp.jsp">
+                <form action="data/registerUser.jsp">
                     <div class="row">
                         <div class="col-6">
                             <div class="form-group">

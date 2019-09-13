@@ -196,11 +196,13 @@
 
         <script src="<%= request.getContextPath()%>/res/scripts/angular/angular.min.js"></script>
         <!-- Bootstrap JS -->            
-        <script src="<%=request.getContextPath()%>/res/scripts/jquery.easing.min.js"></script>            
+        <script src="<%=request.getContextPath()%>/res/scripts/angular/jquery.easing.min.js"></script>            
         <!-- Bootstrap.js está junto do jquery.min.js -->
-        <script src="<%=request.getContextPath()%>/res/scripts/custom.js"></script>         
+        <script src="<%=request.getContextPath()%>/res/scripts/angular/custom.js"></script>         
         <%--<%@include file="<%=request.getContextPath()%>WEB-INF/jspf/restrict/schedule/warningEvent.jspf" %>--%>
         <%--<%@include file="<%=request.getContextPath()%>/WEB-INF/jspf/restrict/schedule/confirm-sent.jspf" %>--%>        
         <%@include file="../WEB-INF/jspf/header.jspf" %>
+        <!-- Scripts -->
+        <%@include file="WEB-INF/jspf/body_scripts.jspf" %>
     </body>
 </html>
