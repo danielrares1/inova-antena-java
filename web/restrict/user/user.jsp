@@ -15,7 +15,7 @@
         <%
             String email = (String) session.getAttribute("email");
             String nome = (String) session.getAttribute("nome");
-            String senhaHash = (String) session.getAttribute("senhaHash");
+            //String senhaHash = (String) session.getAttribute("senhaHash");
             String sobrenome = (String) session.getAttribute("sobrenome");
             if (email == null || email.isEmpty()) {
                 response.sendRedirect("../../home.jsp");
@@ -52,7 +52,7 @@
                                                                                         style="font-size: 2em"></i></a>
                     </div>
                     <div id="user-info">
-                        <div class="" style="margin-top: -5px;"><%= senhaHash%></div>
+                        <div class="" style="margin-top: -5px;">FATEC</div>
                         <div class="" style="margin-top: -5px;">20 anos</div>
                         <div class="" style="margin-top: -5px;">Estudante</div>
                     </div>
