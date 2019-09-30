@@ -47,8 +47,8 @@
                 </div>                
                 <div class="col-md-9" >
                     <div class="card" >
-                        <div class="tab-pane fade in active" id="request-event" >
-                            <h1 class="text-center">teste 1</h1>
+                          <div class="tab-pane fade in active" id="request-event" >
+                            <h1 class="text-center">DIV1</h1>
                         </div>
                         <div class="tab-pane fade" id="confirmed-event" style="margin-top: -56px;" >
                             <h1 class="text-center">teste 2</h1>
