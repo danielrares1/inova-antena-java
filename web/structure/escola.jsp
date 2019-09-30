@@ -203,6 +203,6 @@
         <%--<%@include file="<%=request.getContextPath()%>/WEB-INF/jspf/restrict/schedule/confirm-sent.jspf" %>--%>        
         <%@include file="../WEB-INF/jspf/header.jspf" %>
         <!-- Scripts -->
-        <%@include file="WEB-INF/jspf/body_scripts.jspf" %>
+        <%@include file="../WEB-INF/jspf/body_scripts.jspf" %>
     </body>
 </html>

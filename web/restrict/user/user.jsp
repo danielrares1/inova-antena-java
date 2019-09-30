@@ -17,9 +17,6 @@
             String nome = (String) session.getAttribute("nome");
             //String senhaHash = (String) session.getAttribute("senhaHash");
             String sobrenome = (String) session.getAttribute("sobrenome");
-            if (email == null || email.isEmpty()) {
-                response.sendRedirect("../../home.jsp");
-            }
         %>
         <!-- Header Profile -->
         <%@include file="../../WEB-INF/jspf/header.jspf" %>

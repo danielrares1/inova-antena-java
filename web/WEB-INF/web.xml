@@ -16,4 +16,13 @@
             30
         </session-timeout>
     </session-config>
+    <filter>
+        <filter-name>Filters</filter-name>
+        <filter-class>br.gov.sp.cps.antena.util.Filters</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>Filters</filter-name>
+        <url-pattern>/restrict/*</url-pattern>
+        <url-pattern>/structure/*</url-pattern>
+    </filter-mapping>
 </web-app>
