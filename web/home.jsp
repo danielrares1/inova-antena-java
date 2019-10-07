@@ -33,6 +33,15 @@
             <h1 id="propg">propagando para os</h1><h1 id="anten">antenados</h1><br/><br/>
         </div> 
 
+
+        
+        
+        
+        
+        
+        
+        
+        
         <!-- Footer -->
         <%@include file="WEB-INF/jspf/footer.jspf"%>
     
@@ -51,11 +60,11 @@
                             <form action="data/login.jsp">
                                 <label id="labelEmail" for="email">E-mail</label>
                                 <br/>
-                                <input type="text" id="username" value="" class="camposform" name="email"/>
+                                <input type="text" id="username" value="" required class="camposform" name="email"/>
                                 <br/><br/>
                                 <label id="labelSenha" for="password">Senha</label>
                                 <br/>
-                                <input type="password" id="password" class="camposform" name="password"/>
+                                <input type="password" id="password" required class="camposform" name="password"/>
                                 <label id="ouAcesse"> Ou acesse: </label> 
                                 <button id="btnEntrar" class="btn btn-lg btn-danger" type="submit" 
                                      style="margin-left: -82%;"><b>ENTRAR</b>
@@ -165,7 +174,16 @@
 
         <!-- Scripts -->
         <%@include file="WEB-INF/jspf/body_scripts.jspf" %>
-    
+    <!--
+             <script>
+function myFunction(){
+	$("#h01").attr("style","color:red").html("Hello jQuery")
+}
+$(document).ready(myFunction);
+       </script>
+        
+        <h1 id="h01"></h1>   
+        -->
     </body>
         
 </html>
