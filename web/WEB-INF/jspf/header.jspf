@@ -25,13 +25,17 @@
     </div>      
     <div class=" navbar-collapse flex-item-1 item-2" id="navbarProfile">
         <div class="navbar-nav">
-            <a class="nav-item nav-link" href="">PÁGINA INICIAL</a>
+            <a class="nav-item nav-link" href="/restrict/user/user.jsp">PÁGINA INICIAL</a>
             <a class="nav-item nav-link" href="">PORTFÓLIO</a>
             <a class="nav-item nav-link" href="">EVENTOS</a>
             <a class="nav-item nav-link" href="">NOTÍCIAS</a>
             <a class="nav-item nav-link" href="">PRÊMIOS</a> 
             <a class="nav-item nav-link" href="/structure/escola.jsp">INOVADORES</a> 
-            <a class="nav-item nav-link" href="/restrict/schedule/area-1.jsp">AGENDA</a>
+                            <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Minha Área</button>
+                            <ul class="dropdown-menu" id="teste">
+                    <li> <a class="dropdown-item" href="/restrict/schedule/area-manager.jsp">AGENDA</a> </li>
+                    <li> <a class="dropdown-item" href="/restrict/schedule/area-participant.jsp">PARTICIPAR</a> </li>
+                </ul>
         </div>        
     </div>
     <div class="dropdown show flex-item-1 item-1">
