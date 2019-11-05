@@ -8,6 +8,8 @@
 <%@page import="javax.naming.Context"%>
 <%@page import="java.sql.*"%>
 <%
+    
+        //Prepared Statement
     Statement stmt = null;
     ResultSet rs = null;
     Connection con = null;
@@ -32,8 +34,10 @@
         DataSource ds = (DataSource)envContext.lookup("jdbc/AntenaCPS");
         con = ds.getConnection();
         stmt = con.createStatement();
-        rs = stmt.executeQuery("select nome, sobrenome, nivel from parceiros where email = '" +
+        rs = stmt.executeQuery("select nome, sobrenome, nivel from parceiros where email = '"  +
                 email + "' and senha = '" + senhaHex + "'");
+        
+      
         
         if (rs.next() && email!=null || senhaHex!=null || !email.isEmpty() || !senhaHex.isEmpty()) {
             try {

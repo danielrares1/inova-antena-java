@@ -753,7 +753,18 @@ div.absolute-midia {
   -o-animation: fadeIn 1s ease-in-out;
   animation: fadeIn 1s ease-in-out;
   }
-
-  #teste {
+/*barra do dropdown box'*/
+  #teste { 
       margin-left: 72%;
+  }
+  
+   #eventtype{
+      width: 90%;
+  }
+  #eventtitle{
+      width: 90%;
+  }
+   #eventdescription{
+      width: 90%;
+      height: 2000%;
   }

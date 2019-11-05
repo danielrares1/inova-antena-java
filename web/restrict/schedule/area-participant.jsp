@@ -1,4 +1,13 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="org.json.simple.JSONObject"%>
+<%@page import="java.io.IOException"%>
+<%@page import="java.io.FileWriter"%>
+<%@page import="java.security.MessageDigest"%>
+<%@page import="javax.naming.NamingException"%>
+<%@page import="javax.sql.DataSource"%>
+<%@page import="javax.naming.InitialContext"%>
+<%@page import="javax.naming.Context"%>
+<%@page import="java.sql.*"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,8 +26,36 @@
             String nome = (String) session.getAttribute("nome");
             String sobrenome = (String) session.getAttribute("sobrenome");
             String nivel = (String) session.getAttribute("nivel");
+            %>
+            
+         <%
+        Statement stmt = null;
+        ResultSet rs = null;
+        Connection con = null;
+        
+        try{
+            Context initContext = new InitialContext();
+            Context envContext  = (Context)initContext.lookup("java:/comp/env");
+            DataSource ds = (DataSource)envContext.lookup("jdbc/AntenaCPS");
+            con = ds.getConnection();
+            stmt = con.createStatement();
+            rs = stmt.executeQuery("select titulo from atividades where id = 1");
+        
+            if(rs.next()){
+                try {
+                   String titulo = rs.getString(1);
+                   request.setAttribute("tituloAtv", titulo);
+                } catch ( Exception e ) {
+                    out.println("<h2>"+e.getMessage()+"</h2>");
+                } 
+            }
+                
+            } catch ( Exception e ) {
+                out.println("<h2>"+e.getMessage()+"</h2>");
+            } 
+            
+            
         %>
-         
          <br/><br/>         <br/><br/>
 
         <div class="container">
@@ -59,7 +96,7 @@
                                   <div class="col-md-2 ">
                               <label> <b> Filtrar por:</b></label>
                               <select title="Selecionar filtro da pesquisa.">
-                                  <option value="" disabled>Selecione...</option>
+                                  <option value="" selected disabled>Selecione...</option>
                                   <option value="0" >Evento</option>
                                   <option value="1" >Título</option>
                                   <option value="2" >Unidade</option>
@@ -68,7 +105,7 @@
                                   <div class="col-md-2 ">
                               <label> <b> Mostrar: </b> </label>
                               <select title="Selecionar o número de linhas da tabela.">
-                                  <option value="" disabled>Selecione...</option>
+                                  <option value="" selected disabled>Selecione...</option>
                                   <option value="0" >20</option>
                                   <option value="1" >40</option>
                                   <option value="2" >60</option>
@@ -79,15 +116,27 @@
                         <table class="table table-bordered" style="margin-right: 10%">
                             <thead>
                                 <tr>
-                                    <th style="width:15%;">Evento</th>
+                                   
+                                    <th style="width:15%;">Tipo</th> 
                                     <th style="width:25%;">Título</th>
                                     <th style="width:25%;">Unidade</th>
                                     <th style="width:15%;">Data</th>
                                     <th style="width:10%;" >Vagas</th>
                                     <th>Inscrição*</th>
                                 </tr>
-                                
                             </thead>
+                            <tbody>
+                                
+                                <%  String titulo = (String) request.getAttribute("tituloAtv"); %>
+                                  <tr>
+                                    <th>info</th>
+                                    <th><%=titulo%></th>
+                                    <th>info</th>
+                                    <th>00/00</th>
+                                    <th>00/00</th>
+                                    <th>insc</th>
+                                </tr>
+                            </tbody>
                         </table>
                               </div>     
                         </div>
@@ -109,7 +158,7 @@
                                   <div class="col-md-2 ">
                               <label> <b> Filtrar por:</b></label>
                               <select title="Selecionar filtro da pesquisa.">
-                                  <option value="" disabled>Selecione...</option>
+                                  <option value="" selected disabled>Selecione...</option>
                                   <option value="0" >Evento</option>
                                   <option value="1" >Título</option>
                                   <option value="2" >Unidade</option>
@@ -118,7 +167,7 @@
                                   <div class="col-md-2 ">
                               <label> <b> Mostrar: </b> </label>
                               <select title="Selecionar o número de linhas da tabela.">
-                                  <option value="" disabled>Selecione...</option>
+                                  <option value="" selected disabled>Selecione...</option>
                                   <option value="0" >20</option>
                                   <option value="1" >40</option>
                                   <option value="2" >60</option>
@@ -152,7 +201,7 @@
                                   <div class="col-md-2 ">
                               <label> <b> Filtrar por:</b></label>
                               <select title="Selecionar filtro da pesquisa.">
-                                  <option value="" disabled>Selecione...</option>
+                                  <option value="" selected disabled>Selecione...</option>
                                   <option value="0" >Evento</option>
                                   <option value="1" >Título</option>
                                   <option value="2" >Unidade</option>
@@ -161,7 +210,7 @@
                                   <div class="col-md-2 ">
                               <label> <b> Mostrar: </b> </label>
                               <select title="Selecionar o número de linhas da tabela.">
-                                  <option value="" disabled>Selecione...</option>
+                                  <option value="" selected disabled>Selecione...</option>
                                   <option value="0" >20</option>
                                   <option value="1" >40</option>
                                   <option value="2" >60</option>
@@ -192,7 +241,7 @@
                                   <div class="col-md-2 ">
                               <label> <b> Filtrar por:</b></label>
                               <select title="Selecionar filtro da pesquisa.">
-                                  <option value="" disabled>Selecione...</option>
+                                  <option value="" selected disabled>Selecione...</option>
                                   <option value="0" >Evento</option>
                                   <option value="1" >Título</option>
                                   <option value="2" >Unidade</option>
@@ -201,7 +250,7 @@
                                   <div class="col-md-2 ">
                               <label> <b> Mostrar: </b> </label>
                               <select title="Selecionar o número de linhas da tabela.">
-                                  <option value="" disabled>Selecione...</option>
+                                  <option value="" selected disabled>Selecione...</option>
                                   <option value="0" >20</option>
                                   <option value="1" >40</option>
                                   <option value="2" >60</option>
@@ -230,7 +279,7 @@
                                   <div class="col-md-2 ">
                               <label> <b> Filtrar por:</b></label>
                               <select title="Selecionar filtro da pesquisa.">
-                                  <option value="" disabled>Selecione...</option>
+                                  <option value="" selected disabled>Selecione...</option>
                                   <option value="0" >Evento</option>
                                   <option value="1" >Título</option>
                                   <option value="2" >Unidade</option>
@@ -239,7 +288,7 @@
                                   <div class="col-md-2 ">
                               <label> <b> Mostrar: </b> </label>
                               <select title="Selecionar o número de linhas da tabela.">
-                                  <option value="" disabled>Selecione...</option>
+                                  <option value="" selected disabled>Selecione...</option>
                                   <option value="0" >20</option>
                                   <option value="1" >40</option>
                                   <option value="2" >60</option>
@@ -330,7 +379,6 @@
             
     }
     
-
         </script>
     </body>
 </html>
