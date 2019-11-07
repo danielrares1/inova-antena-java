@@ -28,7 +28,7 @@
                         <div class="col-sm-3" id="icon"><a><img src="<%= request.getContextPath()%>/res/images/profile/iconAwards.png" alt=""></a>
                             <h6 style="margin-left: 20%; color: #fff;">Prêmios</h6>
                         </div>
-                        <div class="col-sm-3" id="icon"><a href="#/agenda"><img src="<%= request.getContextPath()%>/res/images/profile/iconEvent.png" alt=""></a>
+                        <div class="col-sm-3" id="icon"><a href="<%request.getContextPath();%>events.jsp"><img src="<%= request.getContextPath()%>/res/images/profile/iconEvent.png" alt=""></a>
                             <h6 style="margin-left: 20%; color: #fff;">Eventos</h6>
                         </div>
                         <div class="col-sm-3" id="icon"><a target="_blank"><img src="<%= request.getContextPath()%>/res/images/profile/iconProj.png" alt=""></a>
