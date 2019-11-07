@@ -19,20 +19,20 @@
         <%@include file="../../WEB-INF/jspf/head_references.jspf"%>
     </head>
     <body class="background" id="border">
-         <%@include file="../../WEB-INF/jspf/header.jspf"%>
+    <%@include file="../../WEB-INF/jspf/header.jspf"%>
          
-          <%
-            String email = (String) session.getAttribute("email");
-            String nome = (String) session.getAttribute("nome");
-            String sobrenome = (String) session.getAttribute("sobrenome");
-            String nivel = (String) session.getAttribute("nivel");
-            %>
+    <%
+        String email = (String) session.getAttribute("email");
+        String nome = (String) session.getAttribute("nome");
+        String sobrenome = (String) session.getAttribute("sobrenome");
+        String nivel = (String) session.getAttribute("nivel");
+    %>
             
-         <%
-        Statement stmt = null;
+    <%
+        /*Statement stmt = null;
         ResultSet rs = null;
         Connection con = null;
-        
+
         try{
             Context initContext = new InitialContext();
             Context envContext  = (Context)initContext.lookup("java:/comp/env");
@@ -40,22 +40,45 @@
             con = ds.getConnection();
             stmt = con.createStatement();
             rs = stmt.executeQuery("select titulo from atividades where id = 1");
-        
+
             if(rs.next()){
                 try {
                    String titulo = rs.getString(1);
                    request.setAttribute("tituloAtv", titulo);
                 } catch ( Exception e ) {
                     out.println("<h2>"+e.getMessage()+"</h2>");
-                } 
+                }
             }
-                
+        } catch ( Exception e ) {
+            out.println("<h2>"+e.getMessage()+"</h2>");
+        }*/
+        
+        Statement stmt = null;
+        ResultSet rs = null;
+        Connection con = null;
+    
+        try {
+            Context initContext = new InitialContext();
+            Context envContext  = (Context)initContext.lookup("java:/comp/env");
+            DataSource ds = (DataSource)envContext.lookup("jdbc/AntenaCPS");
+            con = ds.getConnection();
+            stmt = con.createStatement();
+            rs = stmt.executeQuery("select tipo, titulo from atividades");
+
+            /*try{
+                while(rs.next()) {
+                    String titulo = rs.getString(1); 
+                    System.out.println("titulo: " + titulo);
+                }
             } catch ( Exception e ) {
-                out.println("<h2>"+e.getMessage()+"</h2>");
-            } 
-            
-            
-        %>
+                System.out.println(e.getMessage());
+                //out.println("<h2>"+e.getMessage()+"</h2>");
+            }*/
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            //out.println("<h2>"+e.getMessage()+"</h2>");
+        }
+    %>
          <br/><br/>         <br/><br/>
 
         <div class="container">
@@ -126,16 +149,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                
-                                <%  String titulo = (String) request.getAttribute("tituloAtv"); %>
-                                  <tr>
-                                    <th>info</th>
-                                    <th><%=titulo%></th>
+                                <% while(rs.next()) { 
+                                String tipo = rs.getString(1);
+                                String titulo = rs.getString(2);
+                                %>
+                                <tr>
+                                    <th><%= tipo %></th>
+                                    <th><%= titulo %></th>
                                     <th>info</th>
                                     <th>00/00</th>
                                     <th>00/00</th>
                                     <th>insc</th>
                                 </tr>
+                                <% } %>
                             </tbody>
                         </table>
                               </div>     
@@ -315,11 +341,7 @@
  
                                 
             </div>
-        </div> 
-         
-        
-        
-        <%@include file="../../WEB-INF/jspf/footer.jspf"%>
+        </div>
         
         <%@include file="../../WEB-INF/jspf/body_scripts.jspf" %>
         
@@ -380,5 +402,6 @@
     }
     
         </script>
+        <%@include file="../../WEB-INF/jspf/footer.jspf"%>
     </body>
 </html>
