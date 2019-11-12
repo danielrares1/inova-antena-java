@@ -1,4 +1,7 @@
 
+<%@page import="org.apache.tomcat.util.http.fileupload.FileItemStream"%>
+<%@page import="org.apache.tomcat.util.http.fileupload.FileItemIterator"%>
+<%@page import="org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload"%>
 <%@page import="javax.naming.NamingException"%>
 <%@page import="java.sql.SQLException"%>
 <%@page import="java.sql.Connection"%>
@@ -7,7 +10,13 @@
 <%@page import="javax.naming.InitialContext"%>
 <%@page import="javax.sql.DataSource"%>
 <%@page import="javax.naming.Context"%>
-<%@ page import="org.apache.commons.fileupload.*, org.apache.commons.io.*, org.apache.commons.fileupload.servlet.*, org.apache.commons.fileupload.disk.*, java.io.*, java.util.Iterator, java.util.regex.Pattern" %>
+<%@ page import="org.apache.commons.fileupload.*,
+         org.apache.commons.io.*,
+         org.apache.commons.fileupload.servlet.*,
+         org.apache.commons.fileupload.disk.*,
+         java.io.*,
+         java.util.Iterator,
+         java.util.regex.Pattern" %>
 <%
     Statement stmt = null;
     ResultSet rs = null;
