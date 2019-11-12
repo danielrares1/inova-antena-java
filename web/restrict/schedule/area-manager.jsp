@@ -1,3 +1,12 @@
+<%@page import="org.json.simple.JSONObject"%>
+<%@page import="java.io.IOException"%>
+<%@page import="java.io.FileWriter"%>
+<%@page import="java.security.MessageDigest"%>
+<%@page import="javax.naming.NamingException"%>
+<%@page import="javax.sql.DataSource"%>
+<%@page import="javax.naming.InitialContext"%>
+<%@page import="javax.naming.Context"%>
+<%@page import="java.sql.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -19,6 +28,20 @@
             String nivel = (String) session.getAttribute("nivel");
         %>
          
+        <% /*
+      try {
+                int id = rs.getInt(1);
+                String titulo = rs.getString(2);   
+                String descricao = rs.getString(3);
+                String tipo = rs.getString(4);
+                int duracao = rs.getInt(5);
+                
+            } catch ( Exception e ) {
+                out.println("<h2>"+e.getMessage()+"</h2>");
+            } */
+        %>
+        
+        
          <br/><br/>         <br/><br/>
 
         <div class="container">
@@ -51,57 +74,67 @@
                 <div class="col-md-9" >
                     <div class="card" >
                           <div class="tab-pane fade in active" id="register-event" >
-                              <h2 class="text-center" style="margin-top: 2%">CADASTRAR EVENTO </h2> <hr>
+                              <h2 class="text-center" style="margin-top: 2%">INFORMAÇÕES DA PALESTRA </h2> <hr>
+                              <form action="../../data/registerEvent.jsp">
                               <div class="row" style="margin-left: 10%">
-                                      <div class="col-md-4">
-                                  <label> <b> Pesquisar: </b> </label> 
-                              <input type="text" maxlength="100" placeholder="Procurar..." title="Pesquisar por elemento da tabela.">
-                                      </div> 
-                                  <div class="col-md-2 ">
-                              <label> <b> Filtrar por:</b></label>
-                              <select title="Selecionar filtro da pesquisa.">
-                                  <option value="" disabled>Selecione...</option>
-                                  <option value="0" >Evento</option>
-                                  <option value="1" >Título</option>
-                                  <option value="2" >Unidade</option>
-                              </select>
+                                  
+                                  <label> <b> Tipo de evento: </b> </label> 
+                                  <input id="eventtype" name="typeRegister" type="text" class="form-control" disabled placeholder="Palestra">
+                               
+                                  
+                                  <label> <b> Título da palestra: </b></label> <span style="color: red">*</span>
+                                  <input id="eventtitle" name="titleRegister" type=text maxlength="100" class="form-control" >
+                                  
+                                  <label> <b> Descreva sua palestra: </b></label> <span style="color: red">*</span>
+                                  <textarea id="eventdescription"  name="descriptionRegister" rows="6" maxlength="1024" class="form-control"> </textarea> 
+                                  
+                                  <div class="col-md-6" style="margin-top: 5%">
+                                  <label> <b> Adicionar banner para a palestra: </b></label>  <span style="color: red">*</span>
+                                  <input type="file" accept="image/png, image/jpeg, image/jpg"> 
                                   </div>
-                                  <div class="col-md-2 ">
-                              <label> <b> Mostrar: </b> </label>
-                              <select title="Selecionar o número de linhas da tabela.">
-                                  <option value="" disabled>Selecione...</option>
-                                  <option value="0" >20</option>
-                                  <option value="1" >40</option>
-                                  <option value="2" >60</option>
-                              </select>
+                                  <div class="col-md-3" style="margin-top: 5%">
+                                    <label> <b> Duração: </b></label>  <span style="color: red">*</span> 
+                                    <select name="durationRegister" title="Selecionar duração da palestra">
+                                        <option value="" selected disabled>Selecione</option>
+                                        <option value="50">50 min</option>
+                                        <option value="100">1h40 min</option>
+                                    </select>
+                                  </div>   
+                                 
+                            </div>
+                            <div class="row" style="margin-left: 10%; margin-top: 5%">  
+                              <h4> Unidades: </h4>
+                            </div>
+                                  <div class="row" style="margin-left: 10%; margin-top: 2%">
+                                            <div class="col-md-5">
+                                                <label> Unidade </label>
+                                                <select>
+                                                    <option>Selecione</option>
+                                                    <option>teste1</option>
+                                                    <option>teste2</option>
+                                                </select>
+                                            </div>
+                                        <div class="col-md-3">
+                                                <label> Data </label>
+                                                <input type="text">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label> Hora </label>
+                                            <input type="text">
+                                        </div>
+                                    
                                   </div>
-                                <br/><br/><br/><br/>
-                        <p><b> *A inscrição estará disponível até uma hora antes do evento. </b></p>
-                        <table class="table table-bordered" style="margin-right: 10%">
-                            <thead>
-                                <tr>
-                                    <th style="width:15%;">Evento</th>
-                                    <th style="width:25%;">Título</th>
-                                    <th style="width:25%;">Unidade</th>
-                                    <th style="width:15%;">Data</th>
-                                    <th style="width:10%;" >Vagas</th>
-                                    <th>Inscrição*</th>
-                                </tr>
-                                
-                            </thead>
-                        </table>
-                              </div>     
-                        </div>
-                       
-                        
-                        
+                              
+                              <div style="margin-left: 40%; margin-top: 2%; margin-bottom: 2%"> <button class="btn btn-primary" type="submit"> ENVIAR PROPOSTA</button></div>
+                              </form>
+                          </div>   
                         
                         
                         
                         
                         
                         <div class="tab-pane fade" id="sent-events" style="margin-top: " >
-                            <h2 class="text-center" style="margin-top: 2%">EVENTOS ENVIADOS</h2> <hr>
+                            <h2 class="text-center" style="margin-top: 2%">PALESTRAS ENVIADAS</h2> <hr>
                                    <div class="row" style="margin-left: 10%">
                                       <div class="col-md-4">
                                   <label> <b> Pesquisar: </b> </label> 
@@ -184,7 +217,7 @@
                               </div>
                         </div>
                         <div class="tab-pane fade" id="refused-events" style="margin-top: ">
-                            <h2 class="text-center" style="margin-top: 2%">EVENTOS RECUSADOS</h2> <hr>
+                            <h2 class="text-center" style="margin-top: 2%">PALESTRAS RECUSADAS</h2> <hr>
                                    <div class="row" style="margin-left: 10%">
                                       <div class="col-md-4">
                                   <label> <b> Pesquisar: </b> </label> 
@@ -222,7 +255,7 @@
                               </div>
                         </div>
                         <div class="tab-pane fade" id="fulfilled-events" style="margin-top: ">
-                            <h2 class="text-center" style="margin-top: 2%">EVENTOS REALIZADOS</h2> <hr>
+                            <h2 class="text-center" style="margin-top: 2%">PALESTRAS QUE REALIZEI</h2> <hr>
                                    <div class="row" style="margin-left: 10%">
                                       <div class="col-md-4">
                                   <label> <b> Pesquisar: </b> </label> 
@@ -312,7 +345,7 @@
                                 
             </div>
         </div> 
-         
+        </div>   
         
         
         <%@include file="../../WEB-INF/jspf/footer.jspf"%>

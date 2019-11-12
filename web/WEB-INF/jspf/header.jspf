@@ -17,7 +17,7 @@
 <!-- Header usuário logado -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top flex" id="navbar">
     <div class="flex-item-1 item-1">
-        <img src="<%= request.getContextPath() %>/res/images/antena_logo.png" alt="" id="logo" style="width: 15rem; margin-top: 30px;">
+        <img src="<%= request.getContextPath() %>/res/images/antena_logo.png" alt="" id="logo" style="width: 15rem;">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" 
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -25,12 +25,12 @@
     </div>      
     <div class=" navbar-collapse flex-item-1 item-2" id="navbarProfile">
         <div class="navbar-nav">
-            <a class="nav-item nav-link" href="/restrict/user/user.jsp">PÁGINA INICIAL</a>
+            <a class="nav-item nav-link" href="<%request.getContextPath();%>/restrict/user/user.jsp">PÁGINA INICIAL</a>
             <a class="nav-item nav-link" href="">PORTFÓLIO</a>
-            <a class="nav-item nav-link" href="">EVENTOS</a>
+            <a class="nav-item nav-link" href="<%request.getContextPath();%>../../restrict/user/events.jsp">EVENTOS</a>
             <a class="nav-item nav-link" href="">NOTÍCIAS</a>
             <a class="nav-item nav-link" href="">PRÊMIOS</a> 
-            <a class="nav-item nav-link" href="/structure/escola.jsp">INOVADORES</a> 
+            <a class="nav-item nav-link" href="<%request.getContextPath();%>/structure/escola.jsp">INOVADORES</a> 
                             <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Minha Área</button>
                             <ul class="dropdown-menu" id="teste">
                     <li> <a class="dropdown-item" href="/restrict/schedule/area-manager.jsp">AGENDA</a> </li>
