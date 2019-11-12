@@ -197,3 +197,7 @@ nbdist/
 .nb-gradle/ 
  
 # End of https://www.gitignore.io/api/java,eclipse,netbeans,java-web,intellij+all
+web/res/styles/.DS_Store
+
+lib/
+nbproject/
