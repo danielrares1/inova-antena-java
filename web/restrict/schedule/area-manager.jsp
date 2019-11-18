@@ -88,10 +88,8 @@
                                   <label> <b> Descreva sua palestra: </b></label> <span style="color: red">*</span>
                                   <textarea id="eventdescription"  name="descriptionRegister" rows="6" maxlength="1024" class="form-control"> </textarea> 
                                   
-                                  <div class="col-md-6" style="margin-top: 5%">
-                                  <label> <b> Adicionar banner para a palestra: </b></label>  <span style="color: red">*</span>
-                                  <input type="file" accept="image/png, image/jpeg, image/jpg"> 
-                                  </div>
+                                  <% //aqui %> 
+                                  
                                   <div class="col-md-3" style="margin-top: 5%">
                                     <label> <b> Duração: </b></label>  <span style="color: red">*</span> 
                                     <select name="durationRegister" title="Selecionar duração da palestra">
@@ -129,8 +127,13 @@
                               </form>
                           </div>   
                         
-                        
-                        
+                                  <form action="">
+                        <div class="col-md-6" style="margin-top: 5%">
+                                  <label> <b> Adicionar banner para a palestra: </b></label>  <span style="color: red">*</span>
+                                  <input type="file" accept="image/png, image/jpeg, image/jpg"> 
+                                  <button class="btn btn-secondary" type="submit">Subir Img</button>
+                                  </div>
+                                  </form>   
                         
                         
                         <div class="tab-pane fade" id="sent-events" style="margin-top: " >

@@ -7,6 +7,8 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%
+    //Prepared Statement colocar
+    
     Statement stmt = null;
     ResultSet rs = null;
     Connection con = null;

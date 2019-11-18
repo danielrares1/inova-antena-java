@@ -13,7 +13,7 @@
  */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
 :root {
-  --blue: #007bff;
+
   --indigo: #6610f2;
   --purple: #9B479F;
   --pink: #e83e8c;
@@ -8305,14 +8305,7 @@ button.bg-dark:focus {
   z-index: 1030;
 }
 
-@supports ((position:-webkit-sticky) or (position: sticky)) {
-  .sticky-top {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 1020;
-  }
-}
+
 
 .sr-only {
   position: absolute;
