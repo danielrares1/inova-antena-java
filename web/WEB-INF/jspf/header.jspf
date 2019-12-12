@@ -29,8 +29,10 @@
             <a class="nav-item nav-link" href="">PORTFÓLIO</a>
             <a class="nav-item nav-link" href="<%request.getContextPath();%>../../restrict/user/events.jsp">EVENTOS</a>
             <a class="nav-item nav-link" href="">NOTÍCIAS</a>
-            <a class="nav-item nav-link" href="">PRÊMIOS</a> 
-            <a class="nav-item nav-link" href="<%request.getContextPath();%>/structure/escola.jsp">INOVADORES</a> 
+            <!--<a class="nav-item nav-link" href="">PRÊMIOS</a> -->
+            <a class="nav-item nav-link" href="<%request.getContextPath();%>/structure/escola.jsp">INOVADORES</a>
+            <a class="nav-item nav-link" href="">CADASTRAR</a>
+
                             <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Minha Área</button>
                             <ul class="dropdown-menu" id="teste">
                              <% String nivel = (String) session.getAttribute("nivel");
