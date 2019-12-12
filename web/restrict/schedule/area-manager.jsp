@@ -39,6 +39,10 @@
             } catch ( Exception e ) {
                 out.println("<h2>"+e.getMessage()+"</h2>");
             } */
+            
+             if(!nivel.equals("Professor")){
+            response.sendRedirect("../../restrict/user/user.jsp");
+                }else{
         %>
         
         
@@ -127,6 +131,7 @@
                               </form>
                           </div>   
                         
+                                 <!--
                                   <form action="">
                         <div class="col-md-6" style="margin-top: 5%">
                                   <label> <b> Adicionar banner para a palestra: </b></label>  <span style="color: red">*</span>
@@ -134,7 +139,7 @@
                                   <button class="btn btn-secondary" type="submit">Subir Img</button>
                                   </div>
                                   </form>   
-                        
+                                 -->
                         
                         <div class="tab-pane fade" id="sent-events" style="margin-top: " >
                             <h2 class="text-center" style="margin-top: 2%">PALESTRAS ENVIADAS</h2> <hr>
@@ -348,13 +353,13 @@
                                 
             </div>
         </div> 
-        </div>   
-        
+       
         
         <%@include file="../../WEB-INF/jspf/footer.jspf"%>
         
         <%@include file="../../WEB-INF/jspf/body_scripts.jspf" %>
         
+        <% } %>
         <script>
             var opt1 =  document.getElementById("register-event");
             

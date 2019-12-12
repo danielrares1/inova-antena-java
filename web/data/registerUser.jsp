@@ -59,7 +59,8 @@
                 } catch ( Exception e ) {
                     out.println("<h2>"+e.getMessage()+"</h2>");
                 } finally {
-                    response.sendRedirect("../restrict/user/user.jsp");
+                    session.invalidate(); 
+                    response.sendRedirect("../home.jsp");
                 }
             }
         } catch (SQLException | NullPointerException e) {

@@ -67,11 +67,12 @@
                                 <option value="Professor">Professor</option>
                                 <option value="Gestor">Gestor</option>
                                 <option value="Colaborador">Colaborador</option>
+                                <option  value="Agente">Agente de Inovação</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-group">
-                        <button id= "btnEntrar" class="btn btn-danger" style="margin-top: 2%;" type="submit">ENTRAR</button>
+                        <button id= "btnEntrar" class="btn btn-danger" style="margin-top: 2%;" type="submit"> CADASTRAR </button>
                         <div class="icons-register">
                             <div  id="icon1"><a href=""><img src="<%= request.getContextPath()%>/res/images/fbAccessBt.png" style="max-width: 27px" alt=""></a></div>
                             <div  id="icon1"><a href=""><img src="<%= request.getContextPath()%>/res/images/gglAccessBt.png" style="max-width: 27px" alt=""></a></div>

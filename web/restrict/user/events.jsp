@@ -208,6 +208,7 @@
         <div style="display: flex; justify-content: center; margin: 5rem 0;">
             <div id="calendar" style="width: 600px;"></div>
         </div>
+        <%@include file="../../WEB-INF/jspf/body_scripts.jspf" %>
         <!-- Footer -->
         <%@include file="../../WEB-INF/jspf/footer.jspf" %>
     </body>

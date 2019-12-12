@@ -33,8 +33,15 @@
             <a class="nav-item nav-link" href="<%request.getContextPath();%>/structure/escola.jsp">INOVADORES</a> 
                             <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Minha Área</button>
                             <ul class="dropdown-menu" id="teste">
-                    <li> <a class="dropdown-item" href="/restrict/schedule/area-manager.jsp">AGENDA</a> </li>
+                             <% String nivel = (String) session.getAttribute("nivel");
+                                 if (nivel.equals("Professor") || (nivel.equals("Agente"))) {
+                             %> 
+                                 <li> <a class="dropdown-item" href="/restrict/user/projects.jsp">PROJETOS</a> </li>   
+                                <li> <a class="dropdown-item" href="/restrict/schedule/area-manager.jsp">AGENDA</a> </li>
+                                <li> <a class="dropdown-item" href="/restrict/schedule/area-participant.jsp">PARTICIPAR</a> </li>
+                            <% } else { %>
                     <li> <a class="dropdown-item" href="/restrict/schedule/area-participant.jsp">PARTICIPAR</a> </li>
+                                <% } %>
                 </ul>
         </div>        
     </div>
