@@ -31,7 +31,7 @@
             <a class="nav-item nav-link" href="">NOTÍCIAS</a>
             <!--<a class="nav-item nav-link" href="">PRÊMIOS</a> -->
             <a class="nav-item nav-link" href="<%request.getContextPath();%>/structure/escola.jsp">INOVADORES</a>
-            <a class="nav-item nav-link" href="">CADASTRAR</a>
+            <a class="nav-item nav-link" href="">CADASTRO</a>
 
                             <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Minha Área</button>
                             <ul class="dropdown-menu" id="teste">
